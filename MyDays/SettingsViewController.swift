@@ -8,23 +8,50 @@
 
 import UIKit
 
-let About = ["About"]
+let Profile = ["Edit User Information"]
+
+let More = [
+    ("Help"),
+    ("About"),
+]
 
 
 class SettingsViewController: UIViewController,UITableViewDataSource {
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section == 0{
+            return Profile.count
+        }
+        else {
+            return More.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = About[indexPath.row]
+        if indexPath.section == 0{
+            let EditUserInformation = Profile[indexPath.row]
+            cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+            cell.textLabel?.text = EditUserInformation
+        }
+        else {
+            let more = More[indexPath.row]
+            cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+            cell.textLabel?.text = More[indexPath.row]
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0{
+            return "Profile"
+        }else{
+            return "More"
+        }
     }
     
     override func viewDidLoad() {
@@ -34,7 +61,7 @@ class SettingsViewController: UIViewController,UITableViewDataSource {
         self.navigationController?.navigationBar.tintColor = UIColor.white
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

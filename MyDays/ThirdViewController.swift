@@ -80,7 +80,7 @@ class ThirdViewController: UIViewController {
             //考虑到2月闰年有29天的
             result = "双鱼座"
         }else{
-            print(mmdd)
+       //     print(mmdd)
             result = "日期错误"
         }
         Constelabel.text = result
@@ -169,7 +169,7 @@ class ThirdViewController: UIViewController {
             dformat.timeZone=timeZone as! TimeZone
             let objdate = dformat.date(from: dob2)
         //    let objdate2 = dformat.date(from: dob)
-            print(objdate)
+        //    print(objdate)
             
             let interval = objdate?.timeIntervalSinceNow
             let days = abs( (Int(interval!))/86400)+1
