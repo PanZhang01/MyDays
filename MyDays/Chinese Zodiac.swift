@@ -79,6 +79,29 @@ class Chinese_Zodiac: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255, green: 175/255,blue: 226/255, alpha: 0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
+        let myNewView=UIView(frame: CGRect(x: 20, y: 100, width: 350, height: 300))
+       
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "background3")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
+        // Change UIView background colour
+        myNewView.backgroundColor=UIColor.lightGray
+        
+        // Add rounded corners to UIView
+        myNewView.layer.cornerRadius=25
+        
+        // Add border to UIView
+        myNewView.layer.borderWidth=2
+        
+        // Change UIView Border Color to Red
+        myNewView.layer.borderColor = UIColor.red.cgColor
+        
+        // Add UIView as a Subview
+        self.view.addSubview(myNewView)
+        self.view.sendSubview(toBack: myNewView)
+        
         // Do any additional setup after loading the view.
     }
 

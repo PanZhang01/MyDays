@@ -188,6 +188,8 @@ class ThirdViewController: UIViewController {
         ConstelCal()
         ZodiaCal()
         BirthdayCountdown()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background4.png")!)
+        
         // Do any additional setup after loading the view.
     }
 
