@@ -136,24 +136,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2a-oo-bZ6">
+                            <webView alpha="0.55000000000000004" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="JM3-hs-WtN">
+                                <rect key="frame" x="23" y="201" width="329" height="265"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="186" id="77G-Bo-JZb"/>
+                                </constraints>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2a-oo-bZ6">
                                 <rect key="frame" x="231" y="257" width="80" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Calculate!"/>
                                 <connections>
                                     <action selector="ClickToCal:" destination="7kt-R6-l9u" eventType="touchUpInside" id="TyC-kB-Jao"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Constellation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXf-j2-NIb">
-                                <rect key="frame" x="137" y="350" width="100" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Constellation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXf-j2-NIb">
+                                <rect key="frame" x="138" y="350" width="100" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM.DD.YYYY" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pXX-Rq-VjV">
-                                <rect key="frame" x="39" y="258" width="169" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hul-Y3-PVX">
+                                <rect key="frame" x="315" y="474" width="32" height="30"/>
+                                <state key="normal" title="Hide"/>
+                                <connections>
+                                    <action selector="HidePick:" destination="7kt-R6-l9u" eventType="touchUpInside" id="VP7-ji-adn"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM.DD.YYYY" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pXX-Rq-VjV">
+                                <rect key="frame" x="54" y="258" width="169" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="169" id="mev-lB-ybk"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -161,22 +175,29 @@
                                     <action selector="DatePick:" destination="7kt-R6-l9u" eventType="editingDidBegin" id="Ayx-kf-pTa"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hul-Y3-PVX">
-                                <rect key="frame" x="315" y="395" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Hide"/>
-                                <connections>
-                                    <action selector="HidePick:" destination="7kt-R6-l9u" eventType="touchUpInside" id="VP7-ji-adn"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pXX-Rq-VjV" firstAttribute="top" secondItem="BRM-bJ-gIj" secondAttribute="top" constant="194" id="1Zo-Me-p2S"/>
+                            <constraint firstItem="gXf-j2-NIb" firstAttribute="top" secondItem="pXX-Rq-VjV" secondAttribute="bottom" constant="62" id="7ZX-b5-ze9"/>
+                            <constraint firstItem="pXX-Rq-VjV" firstAttribute="baseline" secondItem="M2a-oo-bZ6" secondAttribute="baseline" id="HRD-er-b6V"/>
+                            <constraint firstItem="JM3-hs-WtN" firstAttribute="top" secondItem="BRM-bJ-gIj" secondAttribute="top" constant="137" id="KQH-Rc-Rtd"/>
+                            <constraint firstItem="JM3-hs-WtN" firstAttribute="leading" secondItem="BRM-bJ-gIj" secondAttribute="leading" constant="23" id="PRU-oZ-lkQ"/>
+                            <constraint firstItem="JM3-hs-WtN" firstAttribute="centerX" secondItem="7Kt-Bp-ZCE" secondAttribute="centerX" id="ZoF-ww-hjW"/>
+                            <constraint firstItem="JM3-hs-WtN" firstAttribute="centerX" secondItem="7Kt-Bp-ZCE" secondAttribute="centerX" id="a82-lB-702"/>
+                            <constraint firstItem="hul-Y3-PVX" firstAttribute="top" secondItem="JM3-hs-WtN" secondAttribute="bottom" constant="8" symbolic="YES" id="crK-HV-aiq"/>
+                            <constraint firstItem="M2a-oo-bZ6" firstAttribute="leading" secondItem="pXX-Rq-VjV" secondAttribute="trailing" constant="8" id="fFX-r9-gIO"/>
+                            <constraint firstItem="JM3-hs-WtN" firstAttribute="centerY" secondItem="7Kt-Bp-ZCE" secondAttribute="centerY" id="g0R-jo-eWe"/>
+                            <constraint firstItem="pXX-Rq-VjV" firstAttribute="leading" secondItem="BRM-bJ-gIj" secondAttribute="leading" constant="54" id="g2E-WB-o5Y"/>
+                            <constraint firstItem="JM3-hs-WtN" firstAttribute="centerX" secondItem="gXf-j2-NIb" secondAttribute="centerX" id="jEB-MC-tdH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BRM-bJ-gIj"/>
                     </view>
                     <connections>
                         <outlet property="DateField" destination="pXX-Rq-VjV" id="jgj-3l-dxb"/>
                         <outlet property="Displaylabel" destination="gXf-j2-NIb" id="dBk-oh-Ada"/>
                         <outlet property="HidePicker" destination="hul-Y3-PVX" id="Czc-cP-SDN"/>
+                        <outlet property="webView" destination="JM3-hs-WtN" id="qe9-il-fsX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t3Z-Mx-7UO" userLabel="First Responder" sceneMemberID="firstResponder"/>

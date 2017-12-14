@@ -7,14 +7,33 @@
 //
 
 import UIKit
+import WebKit
 
-class Constellation: UIViewController {
+class Constellation: UIViewController, WKUIDelegate {
 
     @IBOutlet weak var DateField: UITextField!
     @IBOutlet weak var HidePicker: UIButton!
     @IBOutlet weak var Displaylabel: UILabel!
+    @IBOutlet weak var webView: UIWebView!
     
     let Picker = UIDatePicker(frame: CGRect(x:0, y:0, width:320, height:216))
+   
+    
+    func createButton(x:Int,y:Int,w:Int,h:Int,r:CGFloat,g:CGFloat,b:CGFloat,a:CGFloat,ti:String) -> UIButton{
+        let xAxis = x, yAxis = y, vWidth = w, vHeight = h
+        let vRed:CGFloat = r, vGreen:CGFloat = g, vBlue:CGFloat = b, vAlpha:CGFloat = a
+        let Title = ti
+        let Button = UIButton(frame:CGRect(x:xAxis, y:yAxis, width:vWidth, height:vHeight))
+                Button.setTitle(Title, for:.normal)
+                Button.setTitleColor(UIColor(red: vRed/255, green: vGreen/255, blue: vBlue/255, alpha: vAlpha), for: .normal)
+                self.view.addSubview(Button)
+                return Button
+            }
+    
+    @objc func submit(_ sender:UIButton) {
+        print("submitted")
+        Dateinput()
+    }
     
     //当Datepicker出现时显示隐藏按钮
     @IBAction func DatePick(_ sender: Any) {
@@ -38,6 +57,7 @@ class Constellation: UIViewController {
     
     //将Datepicker里的内容输入到textfield里面
     func Dateinput() {
+        print("DateInput")
         let dformat = DateFormatter()
         dformat.dateFormat = "MM.dd.YYYY"
         let datestr = dformat.string(from: Picker.date)
@@ -119,6 +139,9 @@ class Constellation: UIViewController {
         Dateinput()
     }
     
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -129,9 +152,27 @@ class Constellation: UIViewController {
         DateField.inputView = Picker
         Picker.datePickerMode = .date
         Picker.backgroundColor = UIColor.white
+       
         
-        // Do any additional setup after loading the view.
+        let path = Bundle.main.path(forResource: "rect1", ofType: "svg")!
+        if path != "" {
+            let fileURL:URL = URL(fileURLWithPath: path)
+           // print(fileURL)
+            let req = URLRequest(url: fileURL)
+            self.webView.scalesPageToFit = false
+            self.webView.scrollView.isScrollEnabled = false
+            self.webView.loadRequest(req)
+        }
+        else {
+            print("Object not found")
+            //handle here if path not found
+        }
+        
+        let button1 = createButton(x: 100, y: 100, w: 50, h: 20, r: 55, g: 55, b: 55, a: 1, ti: "button1")
+        button1.addTarget(self, action: #selector(Constellation.submit(_:)), for: .touchUpInside)
+        
     }
+        
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

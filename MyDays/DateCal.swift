@@ -19,6 +19,9 @@ class DateCal: UIViewController {
     let Picker = UIDatePicker(frame: CGRect(x:0, y:0, width:320, height:216))
     let dformat = DateFormatter()
     
+
+    
+    
     //将Datepicker里的内容输入到textfield里面
     func Dateinput() {
         dformat.dateFormat = "MM.dd.YYYY"
@@ -106,3 +109,73 @@ class DateCal: UIViewController {
     */
 
 }
+
+//    func createButton(x:Int,y:Int,w:Int,h:Int,r:CGFloat,g:CGFloat,b:CGFloat,a:CGFloat,ti:String) -> UIButton{
+//        let xAxis = x, yAxis = y, vWidth = w, vHeight = h
+//        let vRed:CGFloat = r, vGreen:CGFloat = g, vBlue:CGFloat = b, vAlpha:CGFloat = a
+//        let Title = ti
+//        let Button = UIButton(frame:CGRect(x:xAxis, y:yAxis, width:vWidth, height:vHeight))
+//        Button.setTitle(Title, for:.normal)
+//        Button.setTitleColor(UIColor(red: vRed/255, green: vGreen/255, blue: vBlue/255, alpha: vAlpha), for: .normal)
+//        self.view.addSubview(Button)
+//        return Button
+//    }
+//
+//    func createLabel(x:Int,y:Int,w:Int,h:Int,r:CGFloat,g:CGFloat,b:CGFloat,a:CGFloat,ti:String)
+//    {
+//        let xAxis = x, yAxis = y, vWidth = w, vHeight = h
+//        let vRed:CGFloat = r, vGreen:CGFloat = g, vBlue:CGFloat = b, vAlpha:CGFloat = a
+//        let Title = ti
+//        let label = UILabel(frame: CGRect(x:xAxis, y:yAxis, width:vWidth, height:vHeight))
+//        label.text = Title
+//        label.textAlignment = .left
+//        label.font = .systemFont(ofSize: 18.0)
+//        label.textColor = UIColor(red: vRed/255, green: vGreen/255, blue: vBlue/255, alpha: vAlpha)
+//        self.view.addSubview(label)
+//    }
+//
+//    func createTextField()
+//    {
+//        let textField = UITextField(frame: CGRect(x: 100.0,y: 100.0,width: 200.0,height: 44.0))
+//
+//        /* 边框样式 */
+//        textField.borderStyle = UITextBorderStyle.roundedRect //圆角矩形边框
+//        //        textField.borderStyle = UITextBorderStyle.None //无边框
+//        //        textField.borderStyle = UITextBorderStyle.Line //直线边框
+//        //        textField.borderStyle = UITextBorderStyle.Bezel //边线 + 阴影
+//
+//        /* 提示文字 */
+//        textField.placeholder = "placeholder"
+//        textField.adjustsFontSizeToFitWidth=true  //当文字超出文本框宽度时，自动调整文字大小
+//        textField.minimumFontSize = 14                  //最小可缩小的字号
+//
+//        /** 水平对齐 **/
+//        //        textField.textAlignment = .Right  //水平右对齐
+//        //        textField.textAlignment = .Center //水平居中对齐
+//        textField.textAlignment = .left     //水平左对齐
+//
+//        /** 垂直对齐 **/
+//        //        textField.contentVerticalAlignment = .Top     //垂直向上对齐
+//        //        textField.contentVerticalAlignment = .Center  //垂直居中对齐
+//        textField.contentVerticalAlignment = .bottom    //垂直向下对齐
+//
+//        /* 清除按钮（输入框内右侧小叉）*/
+//        textField.clearButtonMode=UITextFieldViewMode.whileEditing  //编辑时出现清除按钮
+//        //        textField.clearButtonMode=UITextFieldViewMode.UnlessEditing  //编辑时不出现，编辑后才出现清除按钮
+//        //        textField.clearButtonMode=UITextFieldViewMode.Always  //一直显示清除按钮
+//
+//        textField.becomeFirstResponder()//使文本框在界面打开时就获取焦点，并弹出输入键盘
+//
+//        /* 设置键盘return键的样式 */
+//        textField.returnKeyType = UIReturnKeyType.done //表示完成输入
+//        //        textField.returnKeyType = UIReturnKeyType.Go //表示完成输入，同时会跳到另一页
+//        //        textField.returnKeyType = UIReturnKeyType.Search //表示搜索
+//        //        textField.returnKeyType = UIReturnKeyType.Join //表示注册用户或添加数据
+//        //        textField.returnKeyType = UIReturnKeyType.Next //表示继续下一步
+//        //        textField.returnKeyType = UIReturnKeyType.Send //表示发送
+//
+//       // textField.delegate = self as! UITextFieldDelegate //注意看上边引用UITextFieldDelegate的方法是用“,”分隔，而不是用"<>"
+//
+//        self.view.addSubview(textField)
+//    }
+
