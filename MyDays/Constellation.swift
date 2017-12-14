@@ -129,6 +129,29 @@ class Constellation: UIViewController {
         DateField.inputView = Picker
         Picker.datePickerMode = .date
         Picker.backgroundColor = UIColor.white
+        let myNewView=UIView(frame: CGRect(x: 20, y: 100, width: 350, height: 300))
+        
+        // Change UIView background colour
+        myNewView.backgroundColor=UIColor.lightGray
+        
+        // Add rounded corners to UIView
+        myNewView.layer.cornerRadius=25
+        
+        // Add border to UIView
+        myNewView.layer.borderWidth=2
+        
+        // Change UIView Border Color to Red
+        myNewView.layer.borderColor = UIColor.red.cgColor
+        
+        // Add UIView as a Subview
+        self.view.addSubview(myNewView)
+        self.view.sendSubview(toBack: myNewView)
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "background2")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
         
         // Do any additional setup after loading the view.
     }

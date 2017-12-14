@@ -59,6 +59,7 @@ class SettingsViewController: UIViewController,UITableViewDataSource {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255, green: 175/255,blue: 226/255, alpha: 0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
+        
         // Do any additional setup after loading the view.
     }
     
