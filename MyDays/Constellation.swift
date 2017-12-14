@@ -152,6 +152,7 @@ class Constellation: UIViewController, WKUIDelegate {
         DateField.inputView = Picker
         Picker.datePickerMode = .date
         Picker.backgroundColor = UIColor.white
+
        
         
         let path = Bundle.main.path(forResource: "rect1", ofType: "svg")!
@@ -170,6 +171,30 @@ class Constellation: UIViewController, WKUIDelegate {
         
         let button1 = createButton(x: 100, y: 100, w: 50, h: 20, r: 55, g: 55, b: 55, a: 1, ti: "button1")
         button1.addTarget(self, action: #selector(Constellation.submit(_:)), for: .touchUpInside)
+
+        let myNewView=UIView(frame: CGRect(x: 20, y: 100, width: 350, height: 300))
+        
+        // Change UIView background colour
+        myNewView.backgroundColor=UIColor.lightGray
+        
+        // Add rounded corners to UIView
+        myNewView.layer.cornerRadius=25
+        
+        // Add border to UIView
+        myNewView.layer.borderWidth=2
+        
+        // Change UIView Border Color to Red
+        myNewView.layer.borderColor = UIColor.red.cgColor
+        
+        // Add UIView as a Subview
+        self.view.addSubview(myNewView)
+        self.view.sendSubview(toBack: myNewView)
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "background2")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
         
     }
         
