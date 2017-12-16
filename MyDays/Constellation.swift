@@ -11,13 +11,14 @@ import WebKit
 
 class Constellation: UIViewController, WKUIDelegate {
 
-    @IBOutlet weak var DateField: UITextField!
-    @IBOutlet weak var HidePicker: UIButton!
-    @IBOutlet weak var Displaylabel: UILabel!
+  //  @IBOutlet weak var HidePicker: UIButton!
     @IBOutlet weak var webView: UIWebView!
     
-    let Picker = UIDatePicker(frame: CGRect(x:0, y:0, width:320, height:216))
-   
+    let Picker = UIDatePicker()
+    var label1 = UILabel()
+    var DateField1 = UITextField()
+    var HidePicker = UIButton()
+    var calButton = UIButton()
     
     func createButton(x:Int,y:Int,w:Int,h:Int,r:CGFloat,g:CGFloat,b:CGFloat,a:CGFloat,ti:String) -> UIButton{
         let xAxis = x, yAxis = y, vWidth = w, vHeight = h
@@ -30,36 +31,95 @@ class Constellation: UIViewController, WKUIDelegate {
                 return Button
             }
     
+    func createLabel(x:Int,y:Int,w:Int,h:Int,r:CGFloat,g:CGFloat,b:CGFloat,a:CGFloat,ti:String)->UILabel
+        {
+            let xAxis = x, yAxis = y, vWidth = w, vHeight = h
+            let vRed:CGFloat = r, vGreen:CGFloat = g, vBlue:CGFloat = b, vAlpha:CGFloat = a
+            let Title = ti
+            let label = UILabel(frame: CGRect(x:xAxis, y:yAxis, width:vWidth, height:vHeight))
+            label.text = Title
+            label.textAlignment = .left
+            label.font = .systemFont(ofSize: 18.0)
+            label.textColor = UIColor(red: vRed/255, green: vGreen/255, blue: vBlue/255, alpha: vAlpha)
+            self.view.addSubview(label)
+            return label
+        }
+    
+    func createTextField(x:Int,y:Int,w:Int,h:Int,ti:String) -> UITextField
+        {
+            let xAxis = x, yAxis = y, vWidth = w, vHeight = h
+            let textField = UITextField(frame: CGRect(x:xAxis, y:yAxis, width:vWidth, height:vHeight))
+    
+            /* 边框样式 */
+            textField.borderStyle = UITextBorderStyle.roundedRect //圆角矩形边框
+            //        textField.borderStyle = UITextBorderStyle.None //无边框
+            //        textField.borderStyle = UITextBorderStyle.Line //直线边框
+            //        textField.borderStyle = UITextBorderStyle.Bezel //边线 + 阴影
+    
+            /* 提示文字 */
+            let Title = ti
+            textField.placeholder = Title
+            textField.adjustsFontSizeToFitWidth=true  //当文字超出文本框宽度时，自动调整文字大小
+            textField.minimumFontSize = 14                  //最小可缩小的字号
+    
+            /** 水平对齐 **/
+            //        textField.textAlignment = .Right  //水平右对齐
+            //        textField.textAlignment = .Center //水平居中对齐
+            textField.textAlignment = .left     //水平左对齐
+    
+            /** 垂直对齐 **/
+            //        textField.contentVerticalAlignment = .Top     //垂直向上对齐
+            //        textField.contentVerticalAlignment = .Center  //垂直居中对齐
+            textField.contentVerticalAlignment = .bottom    //垂直向下对齐
+    
+            /* 清除按钮（输入框内右侧小叉）*/
+            //textField.clearButtonMode=UITextFieldViewMode.whileEditing  //编辑时出现清除按钮
+            //        textField.clearButtonMode=UITextFieldViewMode.UnlessEditing  //编辑时不出现，编辑后才出现清除按钮
+            //        textField.clearButtonMode=UITextFieldViewMode.Always  //一直显示清除按钮
+    
+            //textField.becomeFirstResponder()//使文本框在界面打开时就获取焦点，并弹出输入键盘
+    
+            /* 设置键盘return键的样式 */
+            //textField.returnKeyType = UIReturnKeyType.done //表示完成输入
+            //        textField.returnKeyType = UIReturnKeyType.Go //表示完成输入，同时会跳到另一页
+            //        textField.returnKeyType = UIReturnKeyType.Search //表示搜索
+            //        textField.returnKeyType = UIReturnKeyType.Join //表示注册用户或添加数据
+            //        textField.returnKeyType = UIReturnKeyType.Next //表示继续下一步
+            //        textField.returnKeyType = UIReturnKeyType.Send //表示发送
+    
+           // textField.delegate = self as! UITextFieldDelegate //注意看上边引用UITextFieldDelegate的方法是用“,”分隔，而不是用"<>"
+    
+            self.view.addSubview(textField)
+            return textField
+        }
+    
     @objc func submit(_ sender:UIButton) {
-        print("submitted")
+       // print("submitted")
         Dateinput()
     }
     
-    //当Datepicker出现时显示隐藏按钮
-    @IBAction func DatePick(_ sender: Any) {
-    HidePicker.isHidden = false
-    }
-    
     //点击按钮隐藏Datepicker
-    @IBAction func HidePick(_ sender: Any) {
-    DateField.resignFirstResponder()
+    @objc func HidePick(_ sender: Any) {
+       // print("HidePick")
+    DateField1.resignFirstResponder()
     Dateinput()
     HidePicker.isHidden = true
     }
     
     //点击按钮计算星座
-    @IBAction func ClickToCal(_ sender: Any) {
+    @objc func ClickToCal(_ sender: Any) {
         Dateinput()
-        DateField.resignFirstResponder()
+        DateField1.resignFirstResponder()
         HidePicker.isHidden = true
     }
     
     
     //将Datepicker里的内容输入到textfield里面
     func Dateinput() {
-        print("DateInput")
+        //print("DateInput")
         let dformat = DateFormatter()
         dformat.dateFormat = "MM.dd.YYYY"
+        Picker.datePickerMode = UIDatePickerMode.date
         let datestr = dformat.string(from: Picker.date)
         
         let start = datestr.index(datestr.startIndex,offsetBy: 0)
@@ -74,7 +134,7 @@ class Constellation: UIViewController, WKUIDelegate {
     //    print(mm)
     //    print(dd)
         constellcal(mm: Int(mm)!,dd: Int(dd)!)
-        DateField.text = datestr
+        DateField1.text = datestr
     }
     
     //计算星座
@@ -128,7 +188,7 @@ class Constellation: UIViewController, WKUIDelegate {
             print(mmdd)
             result = "日期错误"
         }
-      Displaylabel.text = result
+      label1.text = result
     }
     
     
@@ -139,7 +199,14 @@ class Constellation: UIViewController, WKUIDelegate {
         Dateinput()
     }
     
-    
+    @objc func showPicker(_ sender:Any){
+        DateField1.inputView = Picker
+      //  print("showPicker")
+        HidePicker.isHidden = false
+        Picker.isHidden = false
+        Picker.datePickerMode = .date
+        Picker.backgroundColor = UIColor.white
+    }
 
     
     override func viewDidLoad() {
@@ -148,10 +215,9 @@ class Constellation: UIViewController, WKUIDelegate {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255, green: 175/255,blue: 226/255, alpha: 0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        HidePicker.isHidden = true
-        DateField.inputView = Picker
-        Picker.datePickerMode = .date
-        Picker.backgroundColor = UIColor.white
+        
+       
+
 
        
         
@@ -169,9 +235,16 @@ class Constellation: UIViewController, WKUIDelegate {
             //handle here if path not found
         }
         
-        let button1 = createButton(x: 100, y: 100, w: 50, h: 20, r: 55, g: 55, b: 55, a: 1, ti: "button1")
-        button1.addTarget(self, action: #selector(Constellation.submit(_:)), for: .touchUpInside)
+        HidePicker = createButton(x: 100, y: 350, w: 50, h: 20, r: 55, g: 55, b: 55, a: 1, ti: "Hide")
+        HidePicker.isHidden = true
+        HidePicker.addTarget(self, action: #selector(Constellation.HidePick(_:)), for: .touchUpInside)
 
+        calButton = createButton(x: 150, y: 350, w: 100, h: 20, r: 55, g: 70, b: 112, a: 1, ti: "Calculate!")
+        calButton.addTarget(self, action: #selector(Constellation.ClickToCal(_:)), for: .touchUpInside)
+        
+        label1 = createLabel(x: 100, y: 200, w: 100, h: 20, r: 255, g: 255, b: 255, a: 1, ti: "Constellation")
+        DateField1 = createTextField(x: 100, y: 300, w: 200, h: 30, ti: "Please pick a date.")
+        DateField1.addTarget(self, action: #selector(Constellation.showPicker(_:)), for: .editingDidBegin)
         let myNewView=UIView(frame: CGRect(x: 20, y: 100, width: 350, height: 300))
         
         // Change UIView background colour
