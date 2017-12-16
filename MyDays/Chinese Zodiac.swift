@@ -23,44 +23,43 @@ class Chinese_Zodiac: UIViewController {
         let xAxis = x, yAxis = y, vWidth = w, vHeight = h
         let textField = UITextField(frame: CGRect(x:xAxis, y:yAxis, width:vWidth, height:vHeight))
         
-        /* 边框样式 */
-        textField.borderStyle = UITextBorderStyle.roundedRect //圆角矩形边框
-        //        textField.borderStyle = UITextBorderStyle.None //无边框
-        //        textField.borderStyle = UITextBorderStyle.Line //直线边框
-        //        textField.borderStyle = UITextBorderStyle.Bezel //边线 + 阴影
-        
-        /* 提示文字 */
+        /* Border style */
+        textField.borderStyle = UITextBorderStyle.roundedRect //Rounded rectangle border
+        //        textField.borderStyle = UITextBorderStyle.None //No border
+        //        textField.borderStyle = UITextBorderStyle.Line //Straight line border
+        //        textField.borderStyle = UITextBorderStyle.Bezel //side boundary + shadow
+        /* Hint text */
         let Title = ti
         textField.placeholder = Title
-        textField.adjustsFontSizeToFitWidth=true  //当文字超出文本框宽度时，自动调整文字大小
-        textField.minimumFontSize = 14                  //最小可缩小的字号
+        textField.adjustsFontSizeToFitWidth=true  //Automatically resize text when text exceeds text box width
+        textField.minimumFontSize = 14                  //The smallest size that can be reduced
         
-        /** 水平对齐 **/
-        //        textField.textAlignment = .Right  //水平右对齐
-        //        textField.textAlignment = .Center //水平居中对齐
-        textField.textAlignment = .left     //水平左对齐
+        /** Horizontal alignment **/
+        //        textField.textAlignment = .Right  //align horizontal right
+        //        textField.textAlignment = .Center //align horizontal center
+        textField.textAlignment = .left     //align horizontal left
         
-        /** 垂直对齐 **/
-        //        textField.contentVerticalAlignment = .Top     //垂直向上对齐
-        //        textField.contentVerticalAlignment = .Center  //垂直居中对齐
-        textField.contentVerticalAlignment = .bottom    //垂直向下对齐
+        /** Vertical alignment **/
+        //        textField.contentVerticalAlignment = .Top     //Vertical upwards alignment
+        //        textField.contentVerticalAlignment = .Center  //align vertical center
+        textField.contentVerticalAlignment = .bottom    //Vertical downward alignment
         
-        /* 清除按钮（输入框内右侧小叉）*/
-        textField.clearButtonMode=UITextFieldViewMode.whileEditing  //编辑时出现清除按钮
-        //        textField.clearButtonMode=UITextFieldViewMode.UnlessEditing  //编辑时不出现，编辑后才出现清除按钮
-        //        textField.clearButtonMode=UITextFieldViewMode.Always  //一直显示清除按钮
+        /* Clear button（A small fork on the right input box）*/
+        //textField.clearButtonMode=UITextFieldViewMode.whileEditing  //Clear buttons appear when editing
+        //        textField.clearButtonMode=UITextFieldViewMode.UnlessEditing  //Clear button did not appear when    editing，but appear after editing
+        //        textField.clearButtonMode=UITextFieldViewMode.Always  //Always display the clear button
         
-        //textField.becomeFirstResponder()//使文本框在界面打开时就获取焦点，并弹出输入键盘
+        //textField.becomeFirstResponder()//Make the text box get the focus point when the interface is open and pop up the input keyboard
         
-        /* 设置键盘return键的样式 */
-        //textField.returnKeyType = UIReturnKeyType.done //表示完成输入
-        //        textField.returnKeyType = UIReturnKeyType.Go //表示完成输入，同时会跳到另一页
-        //        textField.returnKeyType = UIReturnKeyType.Search //表示搜索
-        //        textField.returnKeyType = UIReturnKeyType.Join //表示注册用户或添加数据
-        //        textField.returnKeyType = UIReturnKeyType.Next //表示继续下一步
-        //        textField.returnKeyType = UIReturnKeyType.Send //表示发送
+        /* Setting the style of return */
+        //textField.returnKeyType = UIReturnKeyType.done //Complete input
+        //        textField.returnKeyType = UIReturnKeyType.Go //Represents the completion of the input and will jump to the other page
+        //        textField.returnKeyType = UIReturnKeyType.Search //Search
+        //        textField.returnKeyType = UIReturnKeyType.Join //Representing a registered user or adding data
+        //        textField.returnKeyType = UIReturnKeyType.Next //Continue to the next step
+        //        textField.returnKeyType = UIReturnKeyType.Send //Send
         
-        // textField.delegate = self as! UITextFieldDelegate //注意看上边引用UITextFieldDelegate的方法是用“,”分隔，而不是用"<>"
+        // textField.delegate = self as! UITextFieldDelegate //Look at the above cited UITextFieldDelegate method is   sepersted by using ","  rather than "< >"
         
         self.view.addSubview(textField)
         return textField
@@ -140,12 +139,13 @@ class Chinese_Zodiac: UIViewController {
     @objc func CalZodiac(_ sender: UIButton) {
         
         calczodiac()
-        self.InputField.resignFirstResponder() //点击按钮划下键盘
+        self.InputField.resignFirstResponder() //Click on the button to hide the keyboard
+
     }
 
     
     
-    //点击屏幕划下键盘
+    //Click on the screen to hide the keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
        calczodiac()

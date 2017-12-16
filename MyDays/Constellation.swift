@@ -50,44 +50,43 @@ class Constellation: UIViewController, WKUIDelegate {
             let xAxis = x, yAxis = y, vWidth = w, vHeight = h
             let textField = UITextField(frame: CGRect(x:xAxis, y:yAxis, width:vWidth, height:vHeight))
     
-            /* 边框样式 */
-            textField.borderStyle = UITextBorderStyle.roundedRect //圆角矩形边框
-            //        textField.borderStyle = UITextBorderStyle.None //无边框
-            //        textField.borderStyle = UITextBorderStyle.Line //直线边框
-            //        textField.borderStyle = UITextBorderStyle.Bezel //边线 + 阴影
-    
-            /* 提示文字 */
+            /* Border style */
+            textField.borderStyle = UITextBorderStyle.roundedRect //Rounded rectangle border
+            //        textField.borderStyle = UITextBorderStyle.None //No border
+            //        textField.borderStyle = UITextBorderStyle.Line //Straight line border
+            //        textField.borderStyle = UITextBorderStyle.Bezel //side boundary + shadow
+            /* Hint text */
             let Title = ti
             textField.placeholder = Title
-            textField.adjustsFontSizeToFitWidth=true  //当文字超出文本框宽度时，自动调整文字大小
-            textField.minimumFontSize = 14                  //最小可缩小的字号
+            textField.adjustsFontSizeToFitWidth=true  //Automatically resize text when text exceeds text box width
+            textField.minimumFontSize = 14                  //The smallest size that can be reduced
     
-            /** 水平对齐 **/
-            //        textField.textAlignment = .Right  //水平右对齐
-            //        textField.textAlignment = .Center //水平居中对齐
-            textField.textAlignment = .left     //水平左对齐
+            /** Horizontal alignment **/
+            //        textField.textAlignment = .Right  //align horizontal right
+            //        textField.textAlignment = .Center //align horizontal center
+            textField.textAlignment = .left     //align horizontal left
     
-            /** 垂直对齐 **/
-            //        textField.contentVerticalAlignment = .Top     //垂直向上对齐
-            //        textField.contentVerticalAlignment = .Center  //垂直居中对齐
-            textField.contentVerticalAlignment = .bottom    //垂直向下对齐
+            /** Vertical alignment **/
+            //        textField.contentVerticalAlignment = .Top     //Vertical upwards alignment
+            //        textField.contentVerticalAlignment = .Center  //align vertical center
+            textField.contentVerticalAlignment = .bottom    //Vertical downward alignment
     
-            /* 清除按钮（输入框内右侧小叉）*/
-            //textField.clearButtonMode=UITextFieldViewMode.whileEditing  //编辑时出现清除按钮
-            //        textField.clearButtonMode=UITextFieldViewMode.UnlessEditing  //编辑时不出现，编辑后才出现清除按钮
-            //        textField.clearButtonMode=UITextFieldViewMode.Always  //一直显示清除按钮
+            /* Clear button（A small fork on the right input box）*/
+            //textField.clearButtonMode=UITextFieldViewMode.whileEditing  //Clear buttons appear when editing
+            //        textField.clearButtonMode=UITextFieldViewMode.UnlessEditing  //Clear button did not appear when    editing，but appear after editing
+            //        textField.clearButtonMode=UITextFieldViewMode.Always  //Always display the clear button
     
-            //textField.becomeFirstResponder()//使文本框在界面打开时就获取焦点，并弹出输入键盘
+            //textField.becomeFirstResponder()//Make the text box get the focus point when the interface is open and pop up the input keyboard
     
-            /* 设置键盘return键的样式 */
-            //textField.returnKeyType = UIReturnKeyType.done //表示完成输入
-            //        textField.returnKeyType = UIReturnKeyType.Go //表示完成输入，同时会跳到另一页
-            //        textField.returnKeyType = UIReturnKeyType.Search //表示搜索
-            //        textField.returnKeyType = UIReturnKeyType.Join //表示注册用户或添加数据
-            //        textField.returnKeyType = UIReturnKeyType.Next //表示继续下一步
-            //        textField.returnKeyType = UIReturnKeyType.Send //表示发送
+            /* Setting the style of return */
+            //textField.returnKeyType = UIReturnKeyType.done //Complete input
+            //        textField.returnKeyType = UIReturnKeyType.Go //Represents the completion of the input and will jump to the other page
+            //        textField.returnKeyType = UIReturnKeyType.Search //Search
+            //        textField.returnKeyType = UIReturnKeyType.Join //Representing a registered user or adding data
+            //        textField.returnKeyType = UIReturnKeyType.Next //Continue to the next step
+            //        textField.returnKeyType = UIReturnKeyType.Send //Send
     
-           // textField.delegate = self as! UITextFieldDelegate //注意看上边引用UITextFieldDelegate的方法是用“,”分隔，而不是用"<>"
+           // textField.delegate = self as! UITextFieldDelegate //Look at the above cited UITextFieldDelegate method is sepersted by using ","  rather than "< >"
     
             self.view.addSubview(textField)
             return textField
@@ -98,7 +97,7 @@ class Constellation: UIViewController, WKUIDelegate {
         Dateinput()
     }
     
-    //点击按钮隐藏Datepicker
+    //click button to hide Datepicker
     @objc func HidePick(_ sender: Any) {
        // print("HidePick")
     DateField1.resignFirstResponder()
@@ -106,7 +105,7 @@ class Constellation: UIViewController, WKUIDelegate {
     HidePicker.isHidden = true
     }
     
-    //点击按钮计算星座
+    //click button to calculate constellation
     @objc func ClickToCal(_ sender: Any) {
         Dateinput()
         DateField1.resignFirstResponder()
@@ -114,7 +113,7 @@ class Constellation: UIViewController, WKUIDelegate {
     }
     
     
-    //将Datepicker里的内容输入到textfield里面
+    //print the content of Datepicker into textfield
     func Dateinput() {
         //print("DateInput")
         let dformat = DateFormatter()
@@ -137,62 +136,61 @@ class Constellation: UIViewController, WKUIDelegate {
         DateField1.text = datestr
     }
     
-    //计算星座
+    //Constellation calculate
     func constellcal(mm: Int,dd: Int) {
         let month = mm
         let day = dd
-   //     print(month)
-   //     print(day)
-        // 月以100倍之月作为一个数字计算出来
+        //     print(month)
+        //     print(day)
         let mmdd = month * 100 + day;
         var result = ""
         
         if ((mmdd >= 321 && mmdd <= 331) ||
             (mmdd >= 401 && mmdd <= 419)) {
-            result = "白羊座"
+            result = "Ram"
         } else if ((mmdd >= 420 && mmdd <= 430) ||
             (mmdd >= 501 && mmdd <= 520)) {
-            result = "金牛座"
+            result = "Bull"
         } else if ((mmdd >= 521 && mmdd <= 531) ||
             (mmdd >= 601 && mmdd <= 621)) {
-            result = "双子座"
+            result = "Twins"
         } else if ((mmdd >= 622 && mmdd <= 630) ||
             (mmdd >= 701 && mmdd <= 722)) {
-            result = "巨蟹座"
+            result = "Crab"
         } else if ((mmdd >= 723 && mmdd <= 731) ||
             (mmdd >= 801 && mmdd <= 822)) {
-            result = "狮子座"
+            result = "Lion"
         } else if ((mmdd >= 823 && mmdd <= 831) ||
             (mmdd >= 901 && mmdd <= 922)) {
-            result = "处女座"
+            result = "Virgin"
         } else if ((mmdd >= 923 && mmdd <= 930) ||
             (mmdd >= 1001 && mmdd <= 1023)) {
-            result = "天秤座"
+            result = "Scales"
         } else if ((mmdd >= 1024 && mmdd <= 1031) ||
             (mmdd >= 1101 && mmdd <= 1122)) {
-            result = "天蝎座"
+            result = "Scorpion"
         } else if ((mmdd >= 1123 && mmdd <= 1130) ||
             (mmdd >= 1201 && mmdd <= 1221)) {
-            result = "射手座"
+            result = "Archer"
         } else if ((mmdd >= 1222 && mmdd <= 1231) ||
             (mmdd >= 101 && mmdd <= 119)) {
-            result = "摩羯座"
+            result = "Sea Goat"
         } else if ((mmdd >= 120 && mmdd <= 131) ||
             (mmdd >= 201 && mmdd <= 218)) {
-            result = "水瓶座"
+            result = "Water Carrier"
         } else if ((mmdd >= 219 && mmdd <= 229) ||
             (mmdd >= 301 && mmdd <= 320)) {
-            //考虑到2月闰年有29天的
-            result = "双鱼座"
+            //There are 29 days in a leap year in February
+            result = "Fish"
         }else{
             print(mmdd)
-            result = "日期错误"
+            result = "Date error"
         }
-      label1.text = result
+        label1.text = result
     }
     
     
-    //点击屏幕划下键盘
+    //Click on the screen to hide the keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
         HidePicker.isHidden = true
@@ -201,13 +199,13 @@ class Constellation: UIViewController, WKUIDelegate {
     
     @objc func showPicker(_ sender:Any){
         DateField1.inputView = Picker
-      //  print("showPicker")
+        //  print("showPicker")
         HidePicker.isHidden = false
         Picker.isHidden = false
         Picker.datePickerMode = .date
         Picker.backgroundColor = UIColor.white
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -216,15 +214,15 @@ class Constellation: UIViewController, WKUIDelegate {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
-       
-
-
-       
+        
+        
+        
+        
         
         let path = Bundle.main.path(forResource: "rect1", ofType: "svg")!
         if path != "" {
             let fileURL:URL = URL(fileURLWithPath: path)
-           // print(fileURL)
+            // print(fileURL)
             let req = URLRequest(url: fileURL)
             self.webView.scalesPageToFit = false
             self.webView.scrollView.isScrollEnabled = false
@@ -238,7 +236,7 @@ class Constellation: UIViewController, WKUIDelegate {
         HidePicker = createButton(x: 100, y: 350, w: 50, h: 20, r: 55, g: 55, b: 55, a: 1, ti: "Hide")
         HidePicker.isHidden = true
         HidePicker.addTarget(self, action: #selector(Constellation.HidePick(_:)), for: .touchUpInside)
-
+        
         calButton = createButton(x: 150, y: 350, w: 100, h: 20, r: 55, g: 70, b: 112, a: 1, ti: "Calculate!")
         calButton.addTarget(self, action: #selector(Constellation.ClickToCal(_:)), for: .touchUpInside)
         
@@ -270,22 +268,23 @@ class Constellation: UIViewController, WKUIDelegate {
         self.view.backgroundColor = UIColor(patternImage: image)
         
     }
-        
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
+
