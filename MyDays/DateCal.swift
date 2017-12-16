@@ -140,6 +140,10 @@ class DateCal: UIViewController {
         else {BAButton.setTitle("Before", for: .normal)}
     }
     
+    @objc func showPicker(_ sender: Any) {
+        DateField.inputView = Picker
+        Picker.isHidden = false
+    }
     
     //点击屏幕划下键盘
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -187,6 +191,7 @@ class DateCal: UIViewController {
         CalButton.addTarget(self, action: #selector(DateCal.OnclickCal(_:)), for: .touchUpInside)
         NumberText = createTextField(x: 70, y: 200, w: 100, h: 30, ti: "How many")
         DateField = createTextField(x: 200, y: 250, w: 115, h: 30, ti: "DD.MM.YYYY")
+        DateField.addTarget(self, action: #selector(DateCal.showPicker(_:)), for: .editingDidBegin)
         BAButton = createButton(x: 100, y: 250, w: 80, h: 20, r: 30, g: 111, b: 255, a: 1, ti: "Before")
         BAButton.addTarget(self, action: #selector(DateCal.SwitchButton(_:)), for: .touchUpInside)
         
