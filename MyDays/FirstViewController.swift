@@ -16,20 +16,44 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var listofpeople = ["佳哥","奥卢","最帅"]
     
     var db :OpaquePointer? = nil
-    func selectData() ->Int {
+    func getCount() ->Int {
         var statement :OpaquePointer? = nil
         let sql = "SELECT * FROM task_data_table;" as NSString
         if sqlite3_prepare_v2(db, sql.utf8String, -1, &statement, nil)
             == SQLITE_OK{
             var count = 0
             while sqlite3_step(statement) == SQLITE_ROW{
-                count = Int(sqlite3_column_int(statement, 0))
-                let name = String(cString: sqlite3_column_text(statement, 1))
-                print(sqlite3_column_int(statement, 0), name)
+                count += 1
             }
             return count
         }
         return 0;
+    }
+    
+    func dropRow(title: String) {
+        var statement :OpaquePointer? = nil
+        let sql = "delete from task_data_table where title = \"" + title + "\";"
+        print(sql)
+        if sqlite3_prepare_v2(db, (sql as NSString).utf8String, -1, &statement, nil) == SQLITE_OK{
+            if sqlite3_step(statement) == SQLITE_DONE {
+                print("Delete successful")
+            }
+        }
+        sqlite3_finalize(statement)
+    }
+    
+    func getEvents() -> [ String] {
+        var events = [String]()
+        var statement :OpaquePointer? = nil
+        let sql = "SELECT * FROM task_data_table;" as NSString
+        if sqlite3_prepare_v2(db, sql.utf8String, -1, &statement, nil)
+            == SQLITE_OK{
+            while sqlite3_step(statement) == SQLITE_ROW{
+                let name = String(cString: sqlite3_column_text(statement, 1))
+                events.append(name)
+            }
+        }
+        return events;
     }
     
     func insertData(title: String) {
@@ -73,9 +97,9 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         if sqlite3_open(sqlitePath, &db) == SQLITE_OK {
             print("資料庫連線成功")
             createTaskTable()
-            insertData(title: "Buy egg")
-            insertData(title: "Buy apple")
-            print(selectData())
+//            insertData(title: "Buy egg")
+//            insertData(title: "Buy apple")
+            print(getCount())
         } else {
             print("資料庫連線失敗")
             
@@ -88,19 +112,23 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return(listofpeople.count)
+        print(self.getCount())
+        return(self.getCount())
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let eventlist = getEvents()
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "toDoList")
-        cell.textLabel?.text = listofpeople[indexPath.row]
+        cell.textLabel?.text = eventlist[indexPath.row]
         return (cell)
     }
     
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath){
+        let eventlist = getEvents()
         if editingStyle == UITableViewCellEditingStyle.delete {
-            listofpeople.remove(at: indexPath.row)
+            let title = eventlist[indexPath.row]
+            self.dropRow(title: title)
             toDoList.reloadData()
         }
     }
@@ -139,6 +167,7 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             
             if ((newItem.text) != "") {
                 //     print(newItem.text)
+                self.insertData(title: newItem.text!)
                 self.listofpeople.append(newItem.text!)
                 self.toDoList.reloadData()
             } else {
@@ -179,7 +208,7 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(clickbutton(sender:))), animated: true)
 
         super.viewDidLoad()
-
+        
   
     }
 
