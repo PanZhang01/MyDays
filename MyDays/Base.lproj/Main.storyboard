@@ -70,14 +70,6 @@
                                     <segue destination="JaY-8w-7cL" kind="show" id="j4E-EV-TJR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksa-64-h4J">
-                                <rect key="frame" x="172" y="476" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="测试"/>
-                                <connections>
-                                    <segue destination="yOj-cH-h6x" kind="show" id="6Je-yq-Xw1"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -118,28 +110,9 @@
                     <view key="view" contentMode="scaleToFill" id="7Kt-Bp-ZCE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView alpha="0.55000000000000004" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="JM3-hs-WtN">
-                                <rect key="frame" x="23" y="201" width="329" height="186"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="186" id="77G-Bo-JZb"/>
-                                </constraints>
-                            </webView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="JM3-hs-WtN" firstAttribute="top" secondItem="BRM-bJ-gIj" secondAttribute="top" constant="137" id="KQH-Rc-Rtd"/>
-                            <constraint firstItem="JM3-hs-WtN" firstAttribute="leading" secondItem="BRM-bJ-gIj" secondAttribute="leading" constant="23" id="PRU-oZ-lkQ"/>
-                            <constraint firstItem="JM3-hs-WtN" firstAttribute="centerX" secondItem="7Kt-Bp-ZCE" secondAttribute="centerX" id="ZoF-ww-hjW"/>
-                            <constraint firstItem="JM3-hs-WtN" firstAttribute="centerX" secondItem="7Kt-Bp-ZCE" secondAttribute="centerX" id="a82-lB-702"/>
-                            <constraint firstItem="JM3-hs-WtN" firstAttribute="centerY" secondItem="7Kt-Bp-ZCE" secondAttribute="centerY" id="g0R-jo-eWe"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BRM-bJ-gIj"/>
                     </view>
-                    <connections>
-                        <outlet property="webView" destination="JM3-hs-WtN" id="qe9-il-fsX"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t3Z-Mx-7UO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -159,35 +132,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qcD-eJ-WcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2743.1999999999998" y="675.11244377811101"/>
-        </scene>
-        <!--测试-->
-        <scene sceneID="Bbf-1u-z0h">
-            <objects>
-                <viewController title="测试" id="yOj-cH-h6x" customClass="TestViewController" customModule="MyDays" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5wf-wY-Nhc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="skC-3g-Z4w">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="yOj-cH-h6x" id="LFt-bX-iFE"/>
-                                    <outlet property="delegate" destination="yOj-cH-h6x" id="c1O-9T-hXB"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="vzr-Q9-hSg"/>
-                    </view>
-                    <connections>
-                        <outlet property="toDoList" destination="skC-3g-Z4w" id="dtN-BY-s3f"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oiQ-Do-MOP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3661.5999999999999" y="72.413793103448285"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

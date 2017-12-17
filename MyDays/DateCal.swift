@@ -50,8 +50,8 @@ class DateCal: UIViewController {
         
         /** 垂直对齐 **/
         //        textField.contentVerticalAlignment = .Top     //垂直向上对齐
-        //        textField.contentVerticalAlignment = .Center  //垂直居中对齐
-        textField.contentVerticalAlignment = .bottom    //垂直向下对齐
+                textField.contentVerticalAlignment = .center  //垂直居中对齐
+        //textField.contentVerticalAlignment = .bottom    //垂直向下对齐
         
         /* 清除按钮（输入框内右侧小叉）*/
         textField.clearButtonMode=UITextFieldViewMode.whileEditing  //编辑时出现清除按钮
@@ -82,8 +82,10 @@ class DateCal: UIViewController {
         let label = UILabel(frame: CGRect(x:xAxis, y:yAxis, width:vWidth, height:vHeight))
         label.text = Title
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 18.0)
+        label.font = .systemFont(ofSize: 24.0)
         label.textColor = UIColor(red: vRed/255, green: vGreen/255, blue: vBlue/255, alpha: vAlpha)
+        label.shadowColor=UIColor.gray//设置阴影颜色
+        label.layer.shadowOffset = CGSize(width: -2, height: -2)
         self.view.addSubview(label)
         return label
     }
@@ -151,6 +153,40 @@ class DateCal: UIViewController {
         Dateinput()
     }
     
+    //获取屏幕宽度
+//    func getTrueLength(isWidth:Bool)->CGFloat{
+//
+//        var myRect:CGRect = UIScreen.main.bounds;
+//
+//        //得到系统的版本号
+//        var myDeviceVersion:Float = (UIDevice.current.systemVersion as NSString).floatValue
+//
+//        var length:CGFloat = 0.0
+//
+//        //如果版本号小于8.0，而且是横屏的话
+//        if(myDeviceVersion < 8.0&&(self.interfaceOrientation == UIInterfaceOrientation.landscapeLeft||self.interfaceOrientation == UIInterfaceOrientation.landscapeRight)){
+//
+//            if(isWidth){
+//                length = myRect.size.height
+//            }else{
+//                length = myRect.size.width
+//            }
+//        }
+//        else{
+//
+//            if(isWidth){
+//                length = myRect.size.width
+//            }
+//            else{
+//                length = myRect.size.height
+//            }
+//
+//        }
+//
+//        return length;
+//    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255, green: 175/255,blue: 226/255, alpha: 0)
@@ -159,19 +195,19 @@ class DateCal: UIViewController {
         DateField.inputView = Picker
         Picker.datePickerMode = .date
         Picker.backgroundColor = UIColor.white
-        let myNewView=UIView(frame: CGRect(x: 20, y: 100, width: 350, height: 300))
+        let myNewView=UIView(frame: CGRect(x: 12, y: 183, width: 350, height: 300))
         
         // Change UIView background colour
-        myNewView.backgroundColor=UIColor.lightGray
+        myNewView.backgroundColor=UIColor(red: 165/255, green: 185/255, blue: 200/255, alpha: 0.7)
         
         // Add rounded corners to UIView
         myNewView.layer.cornerRadius=25
         
         // Add border to UIView
-        myNewView.layer.borderWidth=2
+        myNewView.layer.borderWidth=1
         
         // Change UIView Border Color to Red
-        myNewView.layer.borderColor = UIColor.red.cgColor
+        myNewView.layer.borderColor = UIColor.lightGray.cgColor
         
         // Add UIView as a Subview
         self.view.addSubview(myNewView)
@@ -184,16 +220,37 @@ class DateCal: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: image)
         // Do any additional setup after loading the view.
        
-        dayLabel = createLabel(x: 230, y: 200, w: 60, h: 20, r: 0, g: 0, b: 0, a: 1, ti: "Days")
-        isLabel = createLabel(x: 100, y: 300, w: 50, h: 20, r: 0, g: 0, b: 0, a: 1, ti: "is")
-        DateLabel = createLabel(x: 200, y: 300, w: 115, h: 20, r: 0, g: 0, b: 0, a: 1, ti: "DD.MM.YYYY")
-        CalButton = createButton(x: 140, y: 350, w: 100, h: 20, r: 30, g: 111, b: 255, a: 1, ti: "Calculate!")
+        dayLabel = createLabel(x: 225, y: 230, w: 60, h: 25, r: 255, g: 255, b: 255, a: 1, ti: "Days")
+        isLabel = createLabel(x: 90, y: 350, w: 50, h: 20, r: 255, g: 255, b: 255, a: 1, ti: "is")
+        DateLabel = createLabel(x: 160, y: 350, w: 155, h: 23, r: 255, g: 255, b: 255, a: 1, ti: "DD.MM.YYYY")
+        CalButton = createButton(x: 87, y: 398, w: 200, h: 35, r: 55, g: 70, b: 112, a: 1, ti: "Calculate!")
+        CalButton.setTitleColor(UIColor.white, for: .normal)
+        CalButton.backgroundColor = UIColor(red: 63/255, green: 160/255, blue: 240/255, alpha: 0.7)
+        CalButton.layer.cornerRadius = 5
+        CalButton.layer.shadowColor = UIColor.lightGray.cgColor
+        CalButton.layer.shadowOpacity = 0.8
+        CalButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        
         CalButton.addTarget(self, action: #selector(DateCal.OnclickCal(_:)), for: .touchUpInside)
-        NumberText = createTextField(x: 70, y: 200, w: 100, h: 30, ti: "How many")
-        DateField = createTextField(x: 200, y: 250, w: 115, h: 30, ti: "DD.MM.YYYY")
+        NumberText = createTextField(x: 65, y: 230, w: 105, h: 33, ti: "How many")
+        DateField = createTextField(x: 195, y: 295, w: 120, h: 33, ti: "DD.MM.YYYY")
         DateField.addTarget(self, action: #selector(DateCal.showPicker(_:)), for: .editingDidBegin)
-        BAButton = createButton(x: 100, y: 250, w: 80, h: 20, r: 30, g: 111, b: 255, a: 1, ti: "Before")
+        BAButton = createButton(x: 70, y: 295, w: 75, h: 33, r: 30, g: 100, b: 255, a: 1, ti: "Before")
+        BAButton.setTitleColor(UIColor.white, for: .normal)
+        BAButton.backgroundColor = UIColor(red: 63/255, green: 160/255, blue: 240/255, alpha: 0.9)
+        BAButton.layer.cornerRadius = 5
+        BAButton.layer.shadowColor = UIColor.lightGray.cgColor
+        BAButton.layer.shadowOpacity = 0.8
+        BAButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+
         BAButton.addTarget(self, action: #selector(DateCal.SwitchButton(_:)), for: .touchUpInside)
+        
+//        var width:CGFloat = getTrueLength(isWidth: true)
+//        print("宽度是\(width)")
+//
+//        //得到高度
+//        var height:CGFloat = getTrueLength(isWidth: false)
+//        print("高度是\(height)")
         
     }
 
