@@ -4,7 +4,7 @@
 //
 //  Created by Jack Zhang on 2017/11/30.
 //  Copyright © 2017年 Jack Zhang. All rights reserved.
-//
+// 667*375
 
 import UIKit
 import WebKit
@@ -12,12 +12,14 @@ import WebKit
 class Constellation: UIViewController, WKUIDelegate {
 
   //  @IBOutlet weak var HidePicker: UIButton!
-    @IBOutlet weak var webView: UIWebView!
+  //  @IBOutlet weak var webView: UIWebView!
     
     let Picker = UIDatePicker()
     var label1 = UILabel()
     var DateField1 = UITextField()
-    var HidePicker = UIButton()
+    var HidePicker = UIButton ()
+    var isLabel = UILabel()
+    
     var calButton = UIButton()
     
     func createButton(x:Int,y:Int,w:Int,h:Int,r:CGFloat,g:CGFloat,b:CGFloat,a:CGFloat,ti:String) -> UIButton{
@@ -38,9 +40,11 @@ class Constellation: UIViewController, WKUIDelegate {
             let Title = ti
             let label = UILabel(frame: CGRect(x:xAxis, y:yAxis, width:vWidth, height:vHeight))
             label.text = Title
-            label.textAlignment = .left
+            label.textAlignment = .center
             label.font = .systemFont(ofSize: 18.0)
             label.textColor = UIColor(red: vRed/255, green: vGreen/255, blue: vBlue/255, alpha: vAlpha)
+            label.shadowColor=UIColor.gray//设置阴影颜色
+            label.layer.shadowOffset = CGSize(width: -2, height: -2)
             self.view.addSubview(label)
             return label
         }
@@ -65,11 +69,12 @@ class Constellation: UIViewController, WKUIDelegate {
             //        textField.textAlignment = .Right  //align horizontal right
             //        textField.textAlignment = .Center //align horizontal center
             textField.textAlignment = .left     //align horizontal left
-    
-            /** Vertical alignment **/
-            //        textField.contentVerticalAlignment = .Top     //Vertical upwards alignment
-            //        textField.contentVerticalAlignment = .Center  //align vertical center
-            textField.contentVerticalAlignment = .bottom    //Vertical downward alignment
+
+            /** 垂直对齐 **/
+            //        textField.contentVerticalAlignment = .Top     //垂直向上对齐
+                 textField.contentVerticalAlignment = .center  //垂直居中对齐
+           // textField.contentVerticalAlignment = .bottom    //垂直向下对齐
+
     
             /* Clear button（A small fork on the right input box）*/
             //textField.clearButtonMode=UITextFieldViewMode.whileEditing  //Clear buttons appear when editing
@@ -207,46 +212,55 @@ class Constellation: UIViewController, WKUIDelegate {
     }
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255, green: 175/255,blue: 226/255, alpha: 0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
+    
         
+//        let path = Bundle.main.path(forResource: "rect1", ofType: "svg")!
+//        if path != "" {
+//            let fileURL:URL = URL(fileURLWithPath: path)
+//           // print(fileURL)
+//            let req = URLRequest(url: fileURL)
+//            self.webView.scalesPageToFit = false
+//            self.webView.scrollView.isScrollEnabled = false
+//            self.webView.loadRequest(req)
+//        }
+//        else {
+//            print("Object not found")
+//            //handle here if path not found
+//        }
+      
         
-        
-        
-        
-        
-        let path = Bundle.main.path(forResource: "rect1", ofType: "svg")!
-        if path != "" {
-            let fileURL:URL = URL(fileURLWithPath: path)
-            // print(fileURL)
-            let req = URLRequest(url: fileURL)
-            self.webView.scalesPageToFit = false
-            self.webView.scrollView.isScrollEnabled = false
-            self.webView.loadRequest(req)
-        }
-        else {
-            print("Object not found")
-            //handle here if path not found
-        }
-        
-        HidePicker = createButton(x: 100, y: 350, w: 50, h: 20, r: 55, g: 55, b: 55, a: 1, ti: "Hide")
+        HidePicker = createButton(x: 30, y: 431, w: 50, h: 20, r: 55, g: 55, b: 55, a: 1, ti: "Hide")
+        HidePicker.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1)
+        view.addSubview(HidePicker)
         HidePicker.isHidden = true
         HidePicker.addTarget(self, action: #selector(Constellation.HidePick(_:)), for: .touchUpInside)
-        
-        calButton = createButton(x: 150, y: 350, w: 100, h: 20, r: 55, g: 70, b: 112, a: 1, ti: "Calculate!")
+        calButton = createButton(x: 87, y: 398, w: 200, h: 35, r: 55, g: 70, b: 112, a: 1, ti: "Calculate!")
+        calButton.setTitleColor(UIColor.white, for: .normal)
+        calButton.backgroundColor = UIColor(red: 154/255, green: 118/255, blue: 157/255, alpha: 1)
+        calButton.layer.cornerRadius = 5
+        calButton.layer.shadowColor = UIColor.lightGray.cgColor
+        calButton.layer.shadowOpacity = 0.8
+        calButton.layer.shadowOffset = CGSize(width: 2, height: 2)
         calButton.addTarget(self, action: #selector(Constellation.ClickToCal(_:)), for: .touchUpInside)
         
-        label1 = createLabel(x: 100, y: 200, w: 100, h: 20, r: 255, g: 255, b: 255, a: 1, ti: "Constellation")
-        DateField1 = createTextField(x: 100, y: 300, w: 200, h: 30, ti: "Please pick a date.")
+        isLabel = createLabel(x: 267, y: 248, w: 40, h: 40, r: 255, g: 255, b: 255, a: 1, ti: "is")
+        isLabel.font = .systemFont(ofSize: 24.0)
+        
+        label1 = createLabel(x: 107, y: 328, w: 160, h: 30, r: 255, g: 255, b: 255, a: 1, ti: "Constellation")
+        label1.font = .systemFont(ofSize: 26.0)
+        DateField1 = createTextField(x: 47, y: 251, w: 180, h: 35, ti: "Please pick a date.")
         DateField1.addTarget(self, action: #selector(Constellation.showPicker(_:)), for: .editingDidBegin)
-        let myNewView=UIView(frame: CGRect(x: 20, y: 100, width: 350, height: 300))
+        let myNewView=UIView(frame: CGRect(x: 12, y: 183, width: 350, height: 300))
         
         // Change UIView background colour
-        myNewView.backgroundColor=UIColor.lightGray
+        myNewView.backgroundColor=UIColor(red: 200/255, green: 161/255, blue: 187/255, alpha: 0.6)
         
         // Add rounded corners to UIView
         myNewView.layer.cornerRadius=25
@@ -255,7 +269,7 @@ class Constellation: UIViewController, WKUIDelegate {
         myNewView.layer.borderWidth=2
         
         // Change UIView Border Color to Red
-        myNewView.layer.borderColor = UIColor.red.cgColor
+        myNewView.layer.borderColor = UIColor.lightGray.cgColor
         
         // Add UIView as a Subview
         self.view.addSubview(myNewView)

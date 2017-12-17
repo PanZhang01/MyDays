@@ -16,6 +16,7 @@ class Chinese_Zodiac: UIViewController {
     
     var InputField = UITextField()
     var LabelYear = UILabel()
+    var isLabel = UILabel()
     var CalculateButton = UIButton()
     
     func createTextField(x:Int,y:Int,w:Int,h:Int,ti:String) -> UITextField
@@ -39,10 +40,10 @@ class Chinese_Zodiac: UIViewController {
         //        textField.textAlignment = .Center //align horizontal center
         textField.textAlignment = .left     //align horizontal left
         
-        /** Vertical alignment **/
-        //        textField.contentVerticalAlignment = .Top     //Vertical upwards alignment
-        //        textField.contentVerticalAlignment = .Center  //align vertical center
-        textField.contentVerticalAlignment = .bottom    //Vertical downward alignment
+        /** 垂直对齐 **/
+        //        textField.contentVerticalAlignment = .Top     //垂直向上对齐
+                textField.contentVerticalAlignment = .center  //垂直居中对齐
+        //textField.contentVerticalAlignment = .bottom    //垂直向下对齐
         
         /* Clear button（A small fork on the right input box）*/
         //textField.clearButtonMode=UITextFieldViewMode.whileEditing  //Clear buttons appear when editing
@@ -72,9 +73,11 @@ class Chinese_Zodiac: UIViewController {
             let Title = ti
             let label = UILabel(frame: CGRect(x:xAxis, y:yAxis, width:vWidth, height:vHeight))
             label.text = Title
-            label.textAlignment = .left
+            label.textAlignment = .center
             label.font = .systemFont(ofSize: 18.0)
             label.textColor = UIColor(red: vRed/255, green: vGreen/255, blue: vBlue/255, alpha: vAlpha)
+            label.shadowColor=UIColor.gray//设置阴影颜色
+            label.layer.shadowOffset = CGSize(width: -2, height: -2)
             self.view.addSubview(label)
             return label
         }
@@ -156,7 +159,7 @@ class Chinese_Zodiac: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255, green: 175/255,blue: 226/255, alpha: 0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        let myNewView=UIView(frame: CGRect(x: 20, y: 100, width: 350, height: 300))
+        let myNewView=UIView(frame: CGRect(x: 12, y: 183, width: 350, height: 300))
        
         UIGraphicsBeginImageContext(self.view.frame.size)
         UIImage(named: "background3")?.draw(in: self.view.bounds)
@@ -164,7 +167,7 @@ class Chinese_Zodiac: UIViewController {
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
         // Change UIView background colour
-        myNewView.backgroundColor=UIColor.lightGray
+        myNewView.backgroundColor=UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 0.5)
         
         // Add rounded corners to UIView
         myNewView.layer.cornerRadius=25
@@ -173,18 +176,27 @@ class Chinese_Zodiac: UIViewController {
         myNewView.layer.borderWidth=2
         
         // Change UIView Border Color to Red
-        myNewView.layer.borderColor = UIColor.red.cgColor
+        myNewView.layer.borderColor = UIColor.lightGray.cgColor
         
         // Add UIView as a Subview
         self.view.addSubview(myNewView)
         self.view.sendSubview(toBack: myNewView)
         
-        InputField = createTextField(x: 100, y: 200, w: 150, h: 30, ti: "Input year here.")
+        InputField = createTextField(x: 47, y: 251, w: 180, h: 35, ti: "Input year here.")
+        
         InputField.keyboardType = .numberPad
+        isLabel = createLabel(x: 267, y: 248, w: 40, h: 40, r: 255, g: 255, b: 255, a: 1, ti: "is")
+        isLabel.font = .systemFont(ofSize: 24.0)
+        LabelYear = createLabel(x: 107, y: 328, w: 160, h: 30, r: 255, g: 255, b: 255, a: 1, ti: "Year")
+        LabelYear.font = .systemFont(ofSize: 26.0)
+        CalculateButton = createButton(x: 87, y: 398, w: 200, h: 35, r: 55, g: 70, b: 112, a: 1, ti: "Calculate!")
+        CalculateButton.setTitleColor(UIColor.white, for: .normal)
+        CalculateButton.backgroundColor = UIColor(red: 63/255, green: 160/255, blue: 210/255, alpha: 1)
+        CalculateButton.layer.cornerRadius = 5
+        CalculateButton.layer.shadowColor = UIColor.lightGray.cgColor
+        CalculateButton.layer.shadowOpacity = 0.8
+        CalculateButton.layer.shadowOffset = CGSize(width: 2, height: 2)
         
-        LabelYear = createLabel(x: 150, y: 300, w: 200, h: 30, r: 0, g: 0, b: 0, a: 1, ti: "Year")
-        
-        CalculateButton = createButton(x: 250, y: 200, w: 120, h: 30, r: 0, g: 0, b: 0, a: 1, ti: "Calculate!")
         CalculateButton.addTarget(self, action: #selector(Chinese_Zodiac.CalZodiac(_:)), for: .touchUpInside)
         
         // Do any additional setup after loading the view.
