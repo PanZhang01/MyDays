@@ -55,9 +55,9 @@ class SettingsViewController: UIViewController,UITableViewDataSource {
     }
     
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//    }
     
     
     override func viewDidLoad() {
