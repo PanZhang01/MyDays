@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,25 +49,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vD0-Z7-dO3">
-                                <rect key="frame" x="131" y="258" width="113" height="30"/>
-                                <state key="normal" title="Date Calculation"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vD0-Z7-dO3">
+                                <rect key="frame" x="88" y="174" width="199" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Date Calculation">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="ESZ-Xn-4KV" kind="show" id="qYV-2n-qaH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZZ-hp-HgI">
-                                <rect key="frame" x="142" y="337" width="90" height="30"/>
-                                <state key="normal" title="Constellation"/>
-                                <connections>
-                                    <segue destination="7kt-R6-l9u" kind="show" id="B83-ma-tvA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4a-zj-pMe">
-                                <rect key="frame" x="134" y="410" width="107" height="30"/>
-                                <state key="normal" title="Chinese Zodiac"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4a-zj-pMe">
+                                <rect key="frame" x="88" y="387" width="192" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Chinese Zodiac">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="JaY-8w-7cL" kind="show" id="j4E-EV-TJR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZZ-hp-HgI">
+                                <rect key="frame" x="99" y="282" width="170" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Constellation">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="7kt-R6-l9u" kind="show" id="B83-ma-tvA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Eg-qr-8Y7">
@@ -79,18 +89,23 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="z4a-zj-pMe" firstAttribute="top" secondItem="TZZ-hp-HgI" secondAttribute="bottom" constant="43" id="6iZ-f2-Pwh"/>
-                            <constraint firstItem="z4a-zj-pMe" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="LjM-5Z-jbk"/>
+                            <constraint firstItem="z4a-zj-pMe" firstAttribute="top" secondItem="TZZ-hp-HgI" secondAttribute="bottom" constant="75" id="6iZ-f2-Pwh"/>
+                            <constraint firstItem="z4a-zj-pMe" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" constant="-3.5" id="LjM-5Z-jbk"/>
                             <constraint firstItem="vD0-Z7-dO3" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="X29-cz-SzA"/>
-                            <constraint firstItem="TZZ-hp-HgI" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="j1o-cR-SC3"/>
-                            <constraint firstItem="TZZ-hp-HgI" firstAttribute="top" secondItem="vD0-Z7-dO3" secondAttribute="bottom" constant="49" id="y2K-go-eNv"/>
-                            <constraint firstItem="vD0-Z7-dO3" firstAttribute="top" secondItem="9Uw-YC-jq6" secondAttribute="top" constant="194" id="yd3-lB-iSI"/>
+                            <constraint firstItem="TZZ-hp-HgI" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" constant="-3.5" id="j1o-cR-SC3"/>
+                            <constraint firstItem="TZZ-hp-HgI" firstAttribute="top" secondItem="vD0-Z7-dO3" secondAttribute="bottom" constant="78" id="y2K-go-eNv"/>
+                            <constraint firstItem="vD0-Z7-dO3" firstAttribute="top" secondItem="9Uw-YC-jq6" secondAttribute="top" constant="110" id="yd3-lB-iSI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Uw-YC-jq6"/>
                     </view>
                     <navigationItem key="navigationItem" title="DateCal" id="4Cy-Q9-O7O"/>
+                    <connections>
+                        <outlet property="ChineseZodiac" destination="z4a-zj-pMe" id="Edf-mM-X9Z"/>
+                        <outlet property="constellation" destination="TZZ-hp-HgI" id="zXq-Ag-hTQ"/>
+                        <outlet property="dateCal" destination="vD0-Z7-dO3" id="6Jl-xc-8Zi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,7 +196,9 @@
                     </view>
                     <connections>
                         <outlet property="dobField" destination="jMw-b1-Eip" id="Dua-Pf-cGr"/>
+                        <outlet property="firstNameField" destination="hYK-HR-18e" id="OTJ-3H-LYE"/>
                         <outlet property="genderField" destination="8gw-8S-fKz" id="Uk3-YZ-7Fz"/>
+                        <outlet property="lastNameField" destination="yhy-b5-Je0" id="z7y-Gv-3uq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8d-aj-jlE" userLabel="First Responder" sceneMemberID="firstResponder"/>
