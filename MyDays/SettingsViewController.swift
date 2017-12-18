@@ -16,7 +16,9 @@ let More = [
 ]
 
 
-class SettingsViewController: UIViewController,UITableViewDataSource {
+class SettingsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -54,17 +56,26 @@ class SettingsViewController: UIViewController,UITableViewDataSource {
         }
     }
     
-
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//    }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0{
+            performSegue(withIdentifier: "userInfo", sender: Profile[indexPath.row])
+        }
+        else{
+            if indexPath.row == 0 {
+        performSegue(withIdentifier: "Help", sender: More[0])
+            }else{
+        performSegue(withIdentifier: "About", sender: More[1])
+            }
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255, green: 175/255,blue: 226/255, alpha: 0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
+        
         
         // Do any additional setup after loading the view.
     }

@@ -21,6 +21,7 @@
 		046199881FCEF0A900480DA7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046199871FCEF0A900480DA7 /* SettingsViewController.swift */; };
 		0461998A1FCEF91C00480DA7 /* Chinese Zodiac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046199891FCEF91C00480DA7 /* Chinese Zodiac.swift */; };
 		0471DB621FD0341E00665E0D /* Constellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471DB611FD0341E00665E0D /* Constellation.swift */; };
+		04B83A181FE7DD4F003D8F9F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B83A171FE7DD4F003D8F9F /* TestViewController.swift */; };
 		04D4B6BD1FD1755900FFE71A /* DateCal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D4B6BC1FD1755900FFE71A /* DateCal.swift */; };
 		04E355791FE148B600B3DB2B /* rect1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 04E355781FE148B600B3DB2B /* rect1.svg */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		046199871FCEF0A900480DA7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		046199891FCEF91C00480DA7 /* Chinese Zodiac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chinese Zodiac.swift"; sourceTree = "<group>"; };
 		0471DB611FD0341E00665E0D /* Constellation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constellation.swift; sourceTree = "<group>"; };
+		04B83A171FE7DD4F003D8F9F /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		04D4B6BC1FD1755900FFE71A /* DateCal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCal.swift; sourceTree = "<group>"; };
 		04E355781FE148B600B3DB2B /* rect1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rect1.svg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +126,7 @@
 				045230D71FCEDF430012299E /* SecondViewController.swift */,
 				046199851FCEE5F300480DA7 /* ThirdViewController.swift */,
 				045230D91FCEDF430012299E /* Main.storyboard */,
+				04B83A171FE7DD4F003D8F9F /* TestViewController.swift */,
 				04D4B6BC1FD1755900FFE71A /* DateCal.swift */,
 				0471DB611FD0341E00665E0D /* Constellation.swift */,
 				046199891FCEF91C00480DA7 /* Chinese Zodiac.swift */,
@@ -306,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B83A181FE7DD4F003D8F9F /* TestViewController.swift in Sources */,
 				0461998A1FCEF91C00480DA7 /* Chinese Zodiac.swift in Sources */,
 				045230D81FCEDF430012299E /* SecondViewController.swift in Sources */,
 				045230D41FCEDF430012299E /* AppDelegate.swift in Sources */,
