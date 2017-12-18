@@ -16,10 +16,12 @@
 		045230EB1FCEDF430012299E /* MyDaysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045230EA1FCEDF430012299E /* MyDaysTests.swift */; };
 		045230F61FCEDF430012299E /* MyDaysUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045230F51FCEDF430012299E /* MyDaysUITests.swift */; };
 		045752231FDD719B00293AF9 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 045752221FDD717600293AF9 /* libsqlite3.tbd */; };
+		0458FB1B1FE710BF003FD818 /* User Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0458FB1A1FE710BF003FD818 /* User Information.swift */; };
 		046199861FCEE5F300480DA7 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046199851FCEE5F300480DA7 /* ThirdViewController.swift */; };
 		046199881FCEF0A900480DA7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046199871FCEF0A900480DA7 /* SettingsViewController.swift */; };
 		0461998A1FCEF91C00480DA7 /* Chinese Zodiac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046199891FCEF91C00480DA7 /* Chinese Zodiac.swift */; };
 		0471DB621FD0341E00665E0D /* Constellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471DB611FD0341E00665E0D /* Constellation.swift */; };
+		04B83A181FE7DD4F003D8F9F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B83A171FE7DD4F003D8F9F /* TestViewController.swift */; };
 		04D4B6BD1FD1755900FFE71A /* DateCal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D4B6BC1FD1755900FFE71A /* DateCal.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,10 +59,12 @@
 		045230F71FCEDF430012299E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		045752221FDD717600293AF9 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		045752241FDD724000293AF9 /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
+		0458FB1A1FE710BF003FD818 /* User Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User Information.swift"; sourceTree = "<group>"; };
 		046199851FCEE5F300480DA7 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		046199871FCEF0A900480DA7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		046199891FCEF91C00480DA7 /* Chinese Zodiac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chinese Zodiac.swift"; sourceTree = "<group>"; };
 		0471DB611FD0341E00665E0D /* Constellation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constellation.swift; sourceTree = "<group>"; };
+		04B83A171FE7DD4F003D8F9F /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		04D4B6BC1FD1755900FFE71A /* DateCal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,10 +124,12 @@
 				045230D71FCEDF430012299E /* SecondViewController.swift */,
 				046199851FCEE5F300480DA7 /* ThirdViewController.swift */,
 				045230D91FCEDF430012299E /* Main.storyboard */,
+				04B83A171FE7DD4F003D8F9F /* TestViewController.swift */,
 				04D4B6BC1FD1755900FFE71A /* DateCal.swift */,
 				0471DB611FD0341E00665E0D /* Constellation.swift */,
 				046199891FCEF91C00480DA7 /* Chinese Zodiac.swift */,
 				046199871FCEF0A900480DA7 /* SettingsViewController.swift */,
+				0458FB1A1FE710BF003FD818 /* User Information.swift */,
 				045230DC1FCEDF430012299E /* Assets.xcassets */,
 				04E3557A1FE148C400B3DB2B /* Resources */,
 				045230DE1FCEDF430012299E /* LaunchScreen.storyboard */,
@@ -299,10 +305,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B83A181FE7DD4F003D8F9F /* TestViewController.swift in Sources */,
 				0461998A1FCEF91C00480DA7 /* Chinese Zodiac.swift in Sources */,
 				045230D81FCEDF430012299E /* SecondViewController.swift in Sources */,
 				045230D41FCEDF430012299E /* AppDelegate.swift in Sources */,
 				0471DB621FD0341E00665E0D /* Constellation.swift in Sources */,
+				0458FB1B1FE710BF003FD818 /* User Information.swift in Sources */,
 				046199861FCEE5F300480DA7 /* ThirdViewController.swift in Sources */,
 				046199881FCEF0A900480DA7 /* SettingsViewController.swift in Sources */,
 				04D4B6BD1FD1755900FFE71A /* DateCal.swift in Sources */,
