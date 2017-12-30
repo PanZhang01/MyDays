@@ -62,14 +62,12 @@
                                     <segue destination="JaY-8w-7cL" kind="show" id="j4E-EV-TJR"/>
                                 </connections>
                             </button>
-
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZZ-hp-HgI">
                                 <rect key="frame" x="88" y="316" width="199" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="qh1-TQ-Bkh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-
                                 <state key="normal" title="Constellation">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -94,7 +92,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-
                             <constraint firstItem="vD0-Z7-dO3" firstAttribute="centerX" secondItem="TZZ-hp-HgI" secondAttribute="centerX" id="Dqa-3b-ojU"/>
                             <constraint firstItem="z4a-zj-pMe" firstAttribute="top" secondItem="TZZ-hp-HgI" secondAttribute="bottom" constant="85" id="KBJ-gC-YFN"/>
                             <constraint firstItem="TZZ-hp-HgI" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="Lym-Li-yDL"/>
@@ -104,7 +101,6 @@
                             <constraint firstItem="TZZ-hp-HgI" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="tNC-Dj-RFv"/>
                             <constraint firstItem="vD0-Z7-dO3" firstAttribute="leading" secondItem="9Uw-YC-jq6" secondAttribute="leading" constant="88" id="twN-CY-9I8"/>
                             <constraint firstItem="TZZ-hp-HgI" firstAttribute="centerX" secondItem="z4a-zj-pMe" secondAttribute="centerX" id="xJ8-mT-8Ew"/>
-
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Uw-YC-jq6"/>
                     </view>
@@ -250,11 +246,11 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">MyDays is an application that meant to provide users with information about date that highly related with users’ daily lives. As a user, you can freely switch different pages by clicking three buttons (Today, dateCal, Me) at the bottom.
+                                <string key="text">MyDays is an application that meant to provide users with information about date that highly related with users’ daily lives. As a user, you can freely switch different pages by clicking three buttons (Today, dateCal, Me) at the bottom.
 In today page, you can add event by clicking the buttons at the top-right corner and delete event by left slip the correspond event. 
 In dateCal page, just click three buttons that represent different functions as “Date Calculation”, “Constellation” and “Chinese Zodiac”. And then surfing in those functions by entering some inputs and finally calculating the results.
 In the Me page, you can click the setting button and then click “edit user information”. Just put your own information there and it will show you your constellation, Chinese zodiac and birthday countdown. If you want to learn more about our application, please see the information from Help and About in the setting page.
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -432,7 +428,7 @@ In the Me page, you can click the setting button and then click “edit user inf
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="27U-V8-ujp">
-                                <rect key="frame" x="31" y="89" width="313" height="153"/>
+                                <rect key="frame" x="31" y="116" width="313" height="153"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hH-LV-7jn">
@@ -443,30 +439,30 @@ In the Me page, you can click the setting button and then click “edit user inf
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15.06.1995" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ug8-5V-EBG">
-                                <rect key="frame" x="197" y="175" width="84" height="21"/>
+                                <rect key="frame" x="197" y="202" width="84" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qx7-Ea-7dc">
-                                <rect key="frame" x="197" y="131" width="136" height="36"/>
+                                <rect key="frame" x="197" y="158" width="136" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JV1-8w-CMc">
-                                <rect key="frame" x="197" y="204" width="140" height="1"/>
+                                <rect key="frame" x="197" y="231" width="140" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rZ6-cd-hD1">
-                                <rect key="frame" x="76" y="385" width="223" height="45"/>
+                                <rect key="frame" x="76" y="412" width="223" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chinese Zodiac" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASz-W9-WQb">
-                                        <rect key="frame" x="26" y="0.0" width="119" height="21"/>
+                                        <rect key="frame" x="17" y="0.0" width="119" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -476,11 +472,11 @@ In the Me page, you can click the setting button and then click “edit user inf
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kvg-d8-xkK">
-                                <rect key="frame" x="76" y="302" width="223" height="47"/>
+                                <rect key="frame" x="76" y="329" width="223" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Constellation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6r-g9-bF3">
-                                        <rect key="frame" x="27" y="0.0" width="100" height="21"/>
+                                        <rect key="frame" x="19" y="0.0" width="100" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -490,11 +486,11 @@ In the Me page, you can click the setting button and then click “edit user inf
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kyp-vD-ezX">
-                                <rect key="frame" x="76" y="469" width="223" height="44"/>
+                                <rect key="frame" x="76" y="496" width="223" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Birthday Countdown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4q-1e-WKq">
-                                        <rect key="frame" x="26" y="0.0" width="157" height="21"/>
+                                        <rect key="frame" x="18" y="0.0" width="157" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -504,21 +500,21 @@ In the Me page, you can click the setting button and then click “edit user inf
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Countdown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyb-Ad-LVa">
-                                <rect key="frame" x="154" y="485" width="88" height="21"/>
+                                <rect key="frame" x="154" y="512" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Zodiac" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEk-iL-wTF">
-                                <rect key="frame" x="154" y="397" width="124" height="35"/>
+                                <rect key="frame" x="154" y="424" width="124" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Constellation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzE-Y7-PEO">
-                                <rect key="frame" x="154" y="320" width="100" height="21"/>
+                                <rect key="frame" x="154" y="347" width="100" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
