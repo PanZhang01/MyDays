@@ -78,8 +78,7 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var birthBackground: UIView!
     @IBOutlet weak var separatorLine: UIView!
     
-    @IBOutlet weak var 
-  : UIImageView!
+    @IBOutlet weak var avatar: UIImageView!
     
     
     /*   @IBOutlet weak var SettingsButton: UIBarButtonItem!
