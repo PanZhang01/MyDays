@@ -10,8 +10,12 @@ import UIKit
 
 class User_Information: UIViewController {
     
+    @IBOutlet weak var firstNameField: UITextField!
+    @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var genderField: UITextField!
     @IBOutlet weak var dobField: UITextField!
+    
+    
     
     var HidePicker:UIButton = {
         let button = UIButton()

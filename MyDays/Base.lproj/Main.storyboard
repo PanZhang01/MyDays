@@ -200,9 +200,9 @@
                     </view>
                     <connections>
                         <outlet property="dobField" destination="jMw-b1-Eip" id="Dua-Pf-cGr"/>
-                        <outlet property="firstNameField" destination="hYK-HR-18e" id="OTJ-3H-LYE"/>
+                        <outlet property="firstNameField" destination="hYK-HR-18e" id="iJ2-V6-81i"/>
                         <outlet property="genderField" destination="8gw-8S-fKz" id="Uk3-YZ-7Fz"/>
-                        <outlet property="lastNameField" destination="yhy-b5-Je0" id="z7y-Gv-3uq"/>
+                        <outlet property="lastNameField" destination="yhy-b5-Je0" id="l4a-g0-tO3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8d-aj-jlE" userLabel="First Responder" sceneMemberID="firstResponder"/>
