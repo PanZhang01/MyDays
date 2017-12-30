@@ -71,7 +71,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZZ-hp-HgI">
-                                <rect key="frame" x="99" y="282" width="170" height="30"/>
+                                <rect key="frame" x="68" y="282" width="228" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Constellation">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -94,7 +94,7 @@
                             <constraint firstItem="z4a-zj-pMe" firstAttribute="top" secondItem="TZZ-hp-HgI" secondAttribute="bottom" constant="75" id="6iZ-f2-Pwh"/>
                             <constraint firstItem="z4a-zj-pMe" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" constant="-3.5" id="LjM-5Z-jbk"/>
                             <constraint firstItem="vD0-Z7-dO3" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="X29-cz-SzA"/>
-                            <constraint firstItem="TZZ-hp-HgI" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" constant="-3.5" id="j1o-cR-SC3"/>
+                            <constraint firstItem="TZZ-hp-HgI" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" constant="-5.5" id="j1o-cR-SC3"/>
                             <constraint firstItem="TZZ-hp-HgI" firstAttribute="top" secondItem="vD0-Z7-dO3" secondAttribute="bottom" constant="78" id="y2K-go-eNv"/>
                             <constraint firstItem="vD0-Z7-dO3" firstAttribute="top" secondItem="9Uw-YC-jq6" secondAttribute="top" constant="110" id="yd3-lB-iSI"/>
                         </constraints>
@@ -135,56 +135,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6OS-RY-suf">
-                                <rect key="frame" x="64" y="126" width="83" height="21"/>
+                                <rect key="frame" x="63" y="244" width="83" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCN-ni-Fwm">
-                                <rect key="frame" x="64" y="174" width="82" height="21"/>
+                                <rect key="frame" x="64" y="318" width="82" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4k0-B4-z8E">
-                                <rect key="frame" x="64" y="379" width="57" height="21"/>
+                                <rect key="frame" x="64" y="392" width="57" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date of Birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWY-X5-Ids">
-                                <rect key="frame" x="64" y="437" width="97" height="21"/>
+                                <rect key="frame" x="64" y="477" width="97" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hYK-HR-18e">
-                                <rect key="frame" x="198" y="121" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhy-b5-Je0">
-                                <rect key="frame" x="198" y="170" width="97" height="30"/>
+                                <rect key="frame" x="202" y="313" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8gw-8S-fKz">
-                                <rect key="frame" x="209" y="374" width="97" height="30"/>
+                                <rect key="frame" x="202" y="388" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMw-b1-Eip">
-                                <rect key="frame" x="209" y="433" width="97" height="30"/>
+                                <rect key="frame" x="202" y="472" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hYK-HR-18e">
+                                <rect key="frame" x="202" y="239" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -209,31 +209,51 @@
         <scene sceneID="dcx-nh-flZ">
             <objects>
                 <viewController title="About" id="BZ6-hW-pao" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3CK-Fr-krf">
+                    <view key="view" contentMode="scaleToFill" id="3CK-Fr-krf" customClass="AboutViewController" customModule="MyDays" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NSZ-NJ-c80">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">MyDays is application developed by Pan Zhang and Jia Sun. All codes are coded by ourselves and all the background pictures are open source pirctures.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Eyv-Ct-q0q"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Xe-EP-1tX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-430" y="2855"/>
+            <point key="canvasLocation" x="-431.19999999999999" y="2854.7226386806601"/>
         </scene>
         <!--Help-->
         <scene sceneID="GrX-Pm-m1a">
             <objects>
                 <viewController title="Help" id="RPe-0f-GaH" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ByH-HE-9PI">
+                    <view key="view" contentMode="scaleToFill" id="ByH-HE-9PI" customClass="HelpViewController" customModule="MyDays" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="akA-Dx-Spr">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">MyDays is an application that meant to provide users with information about date that highly related with users’ daily lives. As a user, you can freely switch different pages by clicking three buttons (Today, dateCal, Me) at the bottom.In today page, you can add event by clicking the buttons at the top-right corner and delete event by left slip the correspond event. In dateCal page, just click three buttons that represent different functions as “Date Calculation”, “Constellation” and “Chinese Zodiac”. And then surfing in those functions by entering some inputs and finally calculating the results.In the Me page, you can click the setting button and then click “edit user information”. Just put your own information there and it will show you your constellation, Chinese zodiac and birthday countdown. If you want to learn more about our application, please see the information from Help and About in the setting page.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="WBS-IZ-kvi"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vK4-QE-dpl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="695" y="2855"/>
+            <point key="canvasLocation" x="693.60000000000002" y="2854.7226386806601"/>
         </scene>
         <!--Constellation-->
         <scene sceneID="p7g-sg-F2s">

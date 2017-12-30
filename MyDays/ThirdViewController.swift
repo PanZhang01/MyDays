@@ -15,6 +15,57 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var Zodlabel: UILabel!
     @IBOutlet weak var Countlabel: UILabel!
 
+    var db :OpaquePointer? = nil
+    func createTable() {
+        let sql = "create table if not exists user_information "
+            + "( id integer primary key autoincrement, "
+            + "first_name text, last_name text, gender text, dob text);" as NSString
+        
+        if sqlite3_exec(db, sql.utf8String, nil, nil, nil)
+            == SQLITE_OK{
+            print("建立資料表成功")
+        }
+        else {
+            print("table create error")
+        }
+    }
+    
+    func getData() -> [ String ] {
+        var statement :OpaquePointer? = nil
+        let sql = "SELECT * FROM user_information;" as NSString
+        if sqlite3_prepare_v2(db, sql.utf8String, -1, &statement, nil)
+            == SQLITE_OK{
+            while sqlite3_step(statement) == SQLITE_ROW{
+                let firstName = String(cString: sqlite3_column_text(statement, 1))
+                let lastName = String(cString: sqlite3_column_text(statement, 2))
+                let gender = String(cString: sqlite3_column_text(statement, 3))
+                let dob = String(cString: sqlite3_column_text(statement, 4))
+                return [firstName, lastName, gender, dob]
+            }
+        }
+        return [];
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
+        let urls = FileManager.default
+            .urls(
+                for: .documentDirectory,
+                in: .userDomainMask)
+        let sqlitePath = urls[urls.count-1].absoluteString
+            + "sqlite3.db"
+        print(sqlitePath)
+        if sqlite3_open(sqlitePath, &db) == SQLITE_OK {
+            print("資料庫連線成功")
+            let personal_information = getData()
+            print(personal_information)
+        } else {
+            print("資料庫連線失敗")
+            
+        }
+    }
+    
     /*   @IBOutlet weak var SettingsButton: UIBarButtonItem!
 
     @IBAction func onClick(_ sender: Any) {

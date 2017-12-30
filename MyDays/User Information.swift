@@ -12,6 +12,12 @@ class User_Information: UIViewController {
     
     @IBOutlet weak var genderField: UITextField!
     @IBOutlet weak var dobField: UITextField!
+    @IBOutlet weak var firstNameField: UITextField!
+    @IBOutlet weak var lastNameField: UITextField!
+    
+    var db :OpaquePointer? = nil
+    
+    var SubmitButton = UIButton()
     
     var HidePicker:UIButton = {
         let button = UIButton()
@@ -39,6 +45,48 @@ class User_Information: UIViewController {
         return picker1
     }()
     
+    
+    func clearDB() {
+        var statement :OpaquePointer? = nil
+        let sql = "delete from user_information;"
+        print(sql)
+        if sqlite3_prepare_v2(db, (sql as NSString).utf8String, -1, &statement, nil) == SQLITE_OK{
+            if sqlite3_step(statement) == SQLITE_DONE {
+                print("Delete successful")
+            }
+        }
+        sqlite3_finalize(statement)
+    }
+    
+    func insertData(firstName: String, lastName: String, gender: String, dob: String) {
+        var statement :OpaquePointer? = nil
+        let st = "insert into user_information "
+            + "(first_name, last_name, gender, dob) " + "values ('" + firstName + "', '" + lastName + "', '" + gender + "', '" + dob + "');"
+        let sql = st as NSString
+        print(sql)
+        if sqlite3_prepare_v2(
+            db, sql.utf8String, -1, &statement, nil) == SQLITE_OK{
+            if sqlite3_step(statement) == SQLITE_DONE {
+                print("新增資料成功")
+            }
+            sqlite3_finalize(statement)
+        }
+    }
+    
+    func createTable() {
+        let sql = "create table if not exists user_information "
+            + "( id integer primary key autoincrement, "
+            + "first_name text, last_name text, gender text, dob text);" as NSString
+        
+        if sqlite3_exec(db, sql.utf8String, nil, nil, nil)
+            == SQLITE_OK{
+            print("建立資料表成功")
+        }
+        else {
+            print("table create error")
+        }
+    }
+    
     func createButton(x:Int,y:Int,w:Int,h:Int,r:CGFloat,g:CGFloat,b:CGFloat,a:CGFloat,ti:String) -> UIButton{
         let xAxis = x, yAxis = y, vWidth = w, vHeight = h
         let vRed:CGFloat = r, vGreen:CGFloat = g, vBlue:CGFloat = b, vAlpha:CGFloat = a
@@ -57,6 +105,7 @@ class User_Information: UIViewController {
         return str!
     }
     
+    
    @objc func Dateinput(_ sender: Any) {
     //    dformat.dateFormat = "MM.dd.YYYY"
         HidePicker.isHidden = false
@@ -72,9 +121,37 @@ class User_Information: UIViewController {
         HidePicker.isHidden = true
     }
     
+    @objc func submit(_ sender: Any) {
+        let f_name = getTextFromField(textField: firstNameField)
+        let l_name = getTextFromField(textField: lastNameField)
+        let gender = getTextFromField(textField: genderField)
+        let dob = getTextFromField(textField: dobField)
+        insertData(firstName: f_name, lastName: l_name, gender: gender, dob: dob)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
         HidePicker.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
+        let urls = FileManager.default
+            .urls(
+                for: .documentDirectory,
+                in: .userDomainMask)
+        let sqlitePath = urls[urls.count-1].absoluteString
+            + "sqlite3.db"
+        print(sqlitePath)
+        if sqlite3_open(sqlitePath, &db) == SQLITE_OK {
+            print("資料庫連線成功")
+            createTable()
+        } else {
+            print("資料庫連線失敗")
+            
+        }
+        clearDB()
     }
     
     override func viewDidLoad() {
@@ -83,6 +160,24 @@ class User_Information: UIViewController {
         HidePicker = createButton(x: 30, y: 431, w: 50, h: 20, r: 55, g: 55, b: 55, a: 1, ti: "Finish")
         HidePicker.isHidden = true
         HidePicker.addTarget(self, action: #selector(User_Information.ClicktoFinish(_:)), for: .touchUpInside)
+        
+        createTable()
+        
+        SubmitButton = createButton(x: 87, y: 538, w: 200, h: 35, r: 55, g: 70, b: 112, a: 1, ti: "Save")
+        SubmitButton.setTitleColor(UIColor.white, for: .normal)
+        SubmitButton.backgroundColor = UIColor(red: 63/255, green: 160/255, blue: 210/255, alpha: 1)
+        SubmitButton.layer.cornerRadius = 5
+        SubmitButton.layer.shadowColor = UIColor.lightGray.cgColor
+        SubmitButton.layer.shadowOpacity = 0.8
+        SubmitButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        
+        SubmitButton.addTarget(self, action: #selector(User_Information.submit(_:)), for: .touchUpInside)
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "background6")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
+
         // Do any additional setup after loading the view.
     }
 
