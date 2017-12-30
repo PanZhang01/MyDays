@@ -10,17 +10,51 @@ import UIKit
 
 class ThirdViewController: UIViewController {
 
+    @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var DOBlabel: UILabel!
     @IBOutlet weak var Constelabel: UILabel!
     @IBOutlet weak var Zodlabel: UILabel!
     @IBOutlet weak var Countlabel: UILabel!
+    @IBOutlet weak var constellation: UILabel!
+    @IBOutlet weak var chineZodi: UILabel!
+    @IBOutlet weak var birthCount: UILabel!
+    
 
+    @IBOutlet weak var userBackground: UIView!
+    @IBOutlet weak var constelBackground: UIView!
+    @IBOutlet weak var zodiBackground: UIView!
+    @IBOutlet weak var birthBackground: UIView!
+    @IBOutlet weak var separatorLine: UIView!
+    
+    @IBOutlet weak var avatar: UIImageView!
+    
+    
     /*   @IBOutlet weak var SettingsButton: UIBarButtonItem!
 
     @IBAction func onClick(_ sender: Any) {
         let settingsView = SettingsViewController()
         present(settingsView,animated: true,completion: nil)
     } */
+    
+    func modifyBackground(view1:UIView,r:CGFloat,g:CGFloat,b:CGFloat) -> UIView{
+        var view = UIView()
+        view = view1
+        let red = r, green = g, blue = b
+        view.backgroundColor = UIColor(red: r/255, green: g/255, blue: b/255, alpha: 1)
+        view.layer.cornerRadius = 5
+        view.layer.shadowColor = UIColor.lightGray.cgColor
+        view.layer.shadowOpacity = 0.8
+        view.layer.shadowOffset = CGSize(width: 2, height: 2)
+        return view
+    }
+    
+    func modifyFont(label1:UILabel,r:CGFloat,g:CGFloat,b:CGFloat) -> UILabel{
+        var label = UILabel()
+        label = label1
+        let red = r, green = g, blue = b
+        label.textColor = UIColor(red: r/255, green: g/255, blue: b/255, alpha: 1)
+        return label
+    }
     
     func ConstelCal() {
         let dob = String(DOBlabel.text!)
@@ -188,6 +222,24 @@ class ThirdViewController: UIViewController {
         ZodiaCal()
         BirthdayCountdown()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background4.png")!)
+        
+        modifyBackground(view1: userBackground, r: 200, g: 200, b: 200)
+        modifyBackground(view1: constelBackground, r: 230, g: 250, b: 255)
+        modifyBackground(view1: zodiBackground, r: 230, g: 250, b: 255)
+        modifyBackground(view1: birthBackground, r: 230, g: 250, b: 255)
+        modifyBackground(view1: separatorLine, r: 0, g: 0, b: 0)
+        
+        modifyFont(label1: userName, r: 0, g: 0, b: 0)
+        modifyFont(label1: DOBlabel, r: 0, g: 0, b: 0)
+        modifyFont(label1: Constelabel, r: 0, g: 0, b: 0)
+        modifyFont(label1: Zodlabel, r: 0, g: 0, b: 0)
+        modifyFont(label1: Countlabel, r: 0, g: 0, b: 0)
+        modifyFont(label1: constellation, r: 70, g: 70, b: 70)
+        modifyFont(label1: chineZodi, r: 70, g: 70, b: 70)
+        modifyFont(label1: birthCount, r: 70, g: 70, b: 70)
+        
+        let image : UIImage = UIImage(named:"user")!
+        avatar.image = image
         
         // Do any additional setup after loading the view.
     }
