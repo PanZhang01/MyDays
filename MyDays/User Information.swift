@@ -16,7 +16,6 @@ class User_Information: UIViewController {
     var HidePicker:UIButton = {
         let button = UIButton()
         return button
-        
     }()
     
     let Picker:UIDatePicker = {

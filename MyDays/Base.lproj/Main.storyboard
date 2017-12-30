@@ -564,7 +564,7 @@
                         <outlet property="tableView" destination="i8p-CA-ndW" id="Hkn-DX-fru"/>
                         <segue destination="RPe-0f-GaH" kind="show" identifier="Help" id="rpw-8Q-Oxv"/>
                         <segue destination="BZ6-hW-pao" kind="show" identifier="About" id="ezG-RK-Hc7"/>
-                        <segue destination="HTb-e7-bkc" kind="show" id="5HQ-o1-8Jv"/>
+                        <segue destination="HTb-e7-bkc" kind="show" identifier="userInfo" id="5HQ-o1-8Jv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afZ-SS-gtE" userLabel="First Responder" sceneMemberID="firstResponder"/>
