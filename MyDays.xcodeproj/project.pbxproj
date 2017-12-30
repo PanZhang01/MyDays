@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		008EEF511FE960A3002F5853 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EEF501FE960A3002F5853 /* AboutViewController.swift */; };
+		008EEF531FE96105002F5853 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EEF521FE96105002F5853 /* HelpViewController.swift */; };
 		045230D41FCEDF430012299E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045230D31FCEDF430012299E /* AppDelegate.swift */; };
 		045230D61FCEDF430012299E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045230D51FCEDF430012299E /* FirstViewController.swift */; };
 		045230D81FCEDF430012299E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045230D71FCEDF430012299E /* SecondViewController.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		008EEF501FE960A3002F5853 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		008EEF521FE96105002F5853 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		045230D01FCEDF430012299E /* MyDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045230D31FCEDF430012299E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		045230D51FCEDF430012299E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 				046199891FCEF91C00480DA7 /* Chinese Zodiac.swift */,
 				046199871FCEF0A900480DA7 /* SettingsViewController.swift */,
 				0458FB1A1FE710BF003FD818 /* User Information.swift */,
+				008EEF501FE960A3002F5853 /* AboutViewController.swift */,
+				008EEF521FE96105002F5853 /* HelpViewController.swift */,
 				045230DC1FCEDF430012299E /* Assets.xcassets */,
 				04E3557A1FE148C400B3DB2B /* Resources */,
 				045230DE1FCEDF430012299E /* LaunchScreen.storyboard */,
@@ -307,10 +313,12 @@
 			files = (
 				04B83A181FE7DD4F003D8F9F /* TestViewController.swift in Sources */,
 				0461998A1FCEF91C00480DA7 /* Chinese Zodiac.swift in Sources */,
+				008EEF511FE960A3002F5853 /* AboutViewController.swift in Sources */,
 				045230D81FCEDF430012299E /* SecondViewController.swift in Sources */,
 				045230D41FCEDF430012299E /* AppDelegate.swift in Sources */,
 				0471DB621FD0341E00665E0D /* Constellation.swift in Sources */,
 				0458FB1B1FE710BF003FD818 /* User Information.swift in Sources */,
+				008EEF531FE96105002F5853 /* HelpViewController.swift in Sources */,
 				046199861FCEE5F300480DA7 /* ThirdViewController.swift in Sources */,
 				046199881FCEF0A900480DA7 /* SettingsViewController.swift in Sources */,
 				04D4B6BD1FD1755900FFE71A /* DateCal.swift in Sources */,
