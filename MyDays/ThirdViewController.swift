@@ -70,6 +70,13 @@ class ThirdViewController: UIViewController {
             print("資料庫連線失敗")
             
         }
+        
+        var array1 : [String] = [String]()
+        array1 = getData()
+        userName.text = array1[0] + " " + array1[1]
+        DOBlabel.text = array1[3]
+        print(array1[3])
+        
     }
 
     @IBOutlet weak var userBackground: UIView!
@@ -109,6 +116,9 @@ class ThirdViewController: UIViewController {
     }
     
     func ConstelCal() {
+        var array1 : [String] = [String]()
+        array1 = getData()
+     //   let dob = String(array1[3])
         let dob = String(DOBlabel.text!)
      //   print("123123",dob)
         let start = dob.index(dob.startIndex,offsetBy: 0)
@@ -172,7 +182,11 @@ class ThirdViewController: UIViewController {
     }
     
     func ZodiaCal(){
+        var array1 : [String] = [String]()
+        array1 = getData()
+     //   let dob = String(array1[3])
         let dob = String(DOBlabel.text!)
+        
         let start = dob.index(dob.startIndex, offsetBy: 6)
         let end = dob.index(dob.endIndex, offsetBy:0)
         let range = start..<end
@@ -229,6 +243,10 @@ class ThirdViewController: UIViewController {
     }
     
         func BirthdayCountdown(){
+            var array1 : [String] = [String]()
+            array1 = getData()
+          //  userName.text = array1[0] + " " + array1[1]
+         //   DOBlabel.text = array1[3]
             let dob = String(DOBlabel.text!)
      //       print(dob)
             //Get date
@@ -270,6 +288,12 @@ class ThirdViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255, green: 175/255,blue: 226/255, alpha: 0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        var array1 : [String] = [String]()
+        array1 = getData()
+       // userName.text = array1[0] + " " + array1[1]
+       // DOBlabel.text = array1[3]
+       
         ConstelCal()
         ZodiaCal()
         BirthdayCountdown()

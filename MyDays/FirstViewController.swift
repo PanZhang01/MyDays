@@ -13,7 +13,7 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     @IBOutlet weak var TodayNavigationBar: UINavigationItem!
     @IBOutlet weak var toDoList: UITableView!
     
-    var listofpeople = ["佳哥","奥卢","最帅"]
+    var listofpeople = ["Tom","Jack","Lily"]
     
     var db :OpaquePointer? = nil
     func getCount() ->Int {

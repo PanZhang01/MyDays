@@ -108,7 +108,7 @@ class User_Information: UIViewController {
     
     
    @objc func Dateinput(_ sender: Any) {
-    //    dformat.dateFormat = "MM.dd.YYYY"
+        dformat.dateFormat = "MM.dd.YYYY"
         HidePicker.isHidden = false
         dobField.inputView = Picker
         let datestr = dformat.string(from: Picker.date)
@@ -127,11 +127,15 @@ class User_Information: UIViewController {
         let l_name = getTextFromField(textField: lastNameField)
         let gender = getTextFromField(textField: genderField)
         let dob = getTextFromField(textField: dobField)
+        clearDB()
         insertData(firstName: f_name, lastName: l_name, gender: gender, dob: dob)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+      //  self.view.endEditing(true)
+        let datestr = dformat.string(from: Picker.date)
+        dobField.text = datestr
+        dobField.resignFirstResponder()
         HidePicker.isHidden = true
     }
     
@@ -147,12 +151,12 @@ class User_Information: UIViewController {
         print(sqlitePath)
         if sqlite3_open(sqlitePath, &db) == SQLITE_OK {
             print("資料庫連線成功")
+            clearDB()
             createTable()
         } else {
             print("資料庫連線失敗")
             
         }
-        clearDB()
     }
     
     override func viewDidLoad() {
